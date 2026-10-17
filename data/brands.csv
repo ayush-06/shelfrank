@@ -1,0 +1,58 @@
+brand,domain,segment,tier,method,parent,notes
+Pilgrim,discoverpilgrim.com,skin|hair|makeup,focus,shopify,Pilgrim,focus brand
+Minimalist,beminimalist.co,skin|hair,skin-t1,shopify,HUL,
+The Derma Co,thedermaco.com,skin|hair,skin-t1|hair-t1,shopify,Honasa,
+Dot & Key,dotandkey.com,skin,skin-t1,shopify,Nykaa,
+Foxtale,foxtale.in,skin,skin-t1,shopify,VC,redirects to myshopify
+Plum,plumgoodness.com,skin|hair,skin-t1,shopify,Pureplay,
+Deconstruct,thedeconstruct.in,skin,skin-t1,shopify,VC,
+Aqualogica,aqualogica.in,skin,skin-t1,shopify,Honasa,
+Hyphen,letshyphen.com,skin,skin-t1,shopify,PEP Brands,
+Re'equil,reequil.com,skin,skin-t1,shopify,Bootstrapped,
+Dr. Sheth's,drsheths.com,skin,skin-t1,shopify,Honasa,
+Mamaearth,mamaearth.in,skin|hair,skin-t2|hair-t2|legacy,shopify,Honasa,
+mCaffeine,www.mcaffeine.com,skin|hair,skin-t2|hair-t2,shopify,PEP Brands,
+Sotrue,sotrue.in,skin,skin-t2,shopify,VC,
+Fixderma,fixderma.com,skin,skin-t2,shopify,Bootstrapped,
+Conscious Chemist,consciouschemist.com,skin,skin-t2,shopify,Era Botanics,
+Earth Rhythm,earthrhythm.com,skin,skin-t2,shopify,Nykaa,
+Chemist at Play,www.chemistatplay.in,skin,skin-t2,shopify,Innovist,
+Traya,traya.health,hair,hair-t1,shopify,VC,
+Bare Anatomy,www.bareanatomy.com,hair,hair-t1,shopify,Innovist,
+Arata,arata.in,hair,hair-t1,shopify,Unilever Ventures,
+ThriveCo,thriveco.in,hair,hair-t1,shopify,Anveya,
+Bblunt,bblunt.com,hair,hair-t2,shopify,Honasa,
+Juicy Chemistry,juicychemistry.com,skin|hair,hair-t2,shopify,Verlinvest,
+Lakme,lakmeindia.com,skin|makeup,legacy,shopify,HUL,
+Himalaya,himalayawellness.in,skin|hair,legacy,shopify,Himalaya,
+Lotus Herbals,www.lotusherbals.com,skin,legacy,shopify,Lotus,
+Biotique,www.biotique.com,skin|hair,legacy,shopify,Biotique,
+TRESemme,www.tresemme.in,hair,legacy,shopify,HUL,
+Indulekha,www.indulekha.co.in,hair,legacy,shopify,HUL,
+Dabur,www.daburshop.com,hair|skin,legacy,shopify,Dabur,includes Dabur Amla
+Kesh King,www.keshking.com,hair,legacy,shopify,Emami,
+Zandu Care (Navratna),www.zanducare.com,hair,legacy,shopify,Emami,
+SUGAR,in.sugarcosmetics.com,makeup,makeup,shopify,VC,
+Swiss Beauty,www.swissbeauty.in,makeup,makeup,shopify,Swiss Beauty,
+Renee,reneecosmetics.in,makeup,makeup,shopify,VC,
+Kay Beauty,www.kaybeauty.com,makeup,makeup,shopify_collections_all,Nykaa,products.json 500s; use /collections/all/products.json
+Faces Canada,www.facescanada.com,makeup,makeup,shopify,Faces,
+Insight,insightcosmetics.in,makeup,makeup,shopify,Insight,
+Mars,marscosmetics.in,makeup,makeup,shopify,Mars,
+Colorbar,colorbarcosmetics.com,makeup,makeup,shopify,Colorbar,
+Nivea,nivea.in,skin,legacy,sitemap,Beiersdorf,phase 1b
+Garnier,garnier.in,skin|hair,legacy,sitemap,L'Oreal,phase 1b
+Maybelline,maybelline.co.in,makeup,legacy,sitemap,L'Oreal,phase 1b
+L'Oreal Paris,lorealparis.co.in,hair|makeup|skin,legacy,sitemap,L'Oreal,phase 1b
+Plix,plixlife.com,hair|skin,hair-t1,sitemap,Marico,phase 1b
+WOW Skin Science,buywow.in,hair|skin,hair-t2,sitemap,Body Cupid,phase 1b
+Be Bodywise,bebodywise.com,hair,hair-t1,sitemap,Mosaic,phase 1b
+Man Matters,manmatters.com,hair,hair-t1,sitemap,Mosaic,phase 1b
+Pond's,,skin,legacy,manual,HUL,no own store
+Parachute,,hair,legacy,manual,Marico,no own store
+Sunsilk,,hair,legacy,manual,HUL,no own store
+Clinic Plus,,hair,legacy,manual,HUL,no own store
+Dove,,hair|skin,legacy,manual,HUL,no own store
+Head & Shoulders,,hair,legacy,manual,P&G,no own store
+Pantene,,hair,legacy,manual,P&G,no own store
+Bajaj Almond Drops,,hair,legacy,manual,Bajaj Consumer,no own store
