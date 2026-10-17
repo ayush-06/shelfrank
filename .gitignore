@@ -1,0 +1,20 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# raw scraped catalogues and model logs stay local
+data/raw/
+logs/
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
