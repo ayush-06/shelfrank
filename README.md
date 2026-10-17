@@ -2,7 +2,7 @@
 
 *PageRank for the AI shopping era: how AI shopping assistants rank Indian beauty brands.*
 
-A private research project. It tests how the AI models behind shopping assistants (GPT, Gemini, Claude, Nova, Llama, DeepSeek, Sarvam) choose between real Indian beauty products, and what sways those choices.
+A private research project. It tests how the AI models behind shopping assistants (GPT, Gemini, Claude, Nova, Llama, DeepSeek) choose between real Indian beauty products, and what sways those choices.
 
 ## What it measures
 - **Position bias:** does the first product on the "shelf" win more than its fair share?
