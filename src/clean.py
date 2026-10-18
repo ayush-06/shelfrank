@@ -31,7 +31,7 @@ CATEGORY_RULES = [
     ("other", "body care", R(r"body ?wash|body gel|shower gel|body lotion|body butter|body oil|\bsoap\b|bath |hand cream|hand wash|foot|underarm|body scrub|body serum|body cream|intimate|hair removal|\bwax strips|body polish|talc|sanitizer|massage oil")),
     ("other", "men grooming", R(r"beard|shav|after ?shave|moustache")),
     ("other", "baby", R(r"\bbaby\b|\bkids?\b|diaper")),
-    ("other", "wellness", R(r"gumm(y|ies)|capsule|tablet|supplement|protein|effervescent|sachet|\btea\b(?! ?tree)|multivitamin|\bdrink\b|chewable|probiotic|juice|immunity|giloy|chyawan|syrup|\bhoney\b|ketchup|chutney|vinegar|hommade|culinary|pickle|tooth ?paste|meswak|mouth ?wash|churna|mosquito|animal|\bpet\b|\bmints?\b|beverage|food")),
+    ("other", "wellness", R(r"gumm(y|ies)|capsule|tablet|supplement|protein (powder|shake)|whey|effervescent|sachet|\btea\b(?! ?tree)|multivitamin|\bdrink\b|chewable|probiotic|juice|immunity|giloy|chyawan|syrup|\bhoney\b|ketchup|chutney|vinegar|hommade|culinary|pickle|tooth ?paste|meswak|mouth ?wash|churna|mosquito|animal|\bpet\b|\bmints?\b|beverage|food")),
     ("hair", "hair colour", R(r"hair colou?r|henna|hair dye|root touch|colou?r naturals|mehendi|mehndi")),
     ("makeup", "nail", R(r"\bnail")),
     # makeup and lips before skin (lip serum, serum foundation, spf lip balm)
@@ -308,7 +308,13 @@ def main():
     hidden_tag = df.raw_hidden | ((df.source == "shopify") & df.type_tags.str.contains(HIDDEN))
     has_visible = (~hidden_tag).groupby(df.product_key).transform("any")
     df["is_hidden"] = hidden_tag & has_visible
-    df["all_listings_hidden"] = hidden_tag & ~has_visible
+    # Pilgrim's Bestsellers collection (public feed, 2026-10-19): products in a visible collection are findable by
+    # shoppers even if tagged hidden-product (e.g. Korean Aloe Anti-Acne Gel Facewash)
+    bs_file = RAW / "pilgrim_bestsellers_collection.json"
+    bs_ids = {str(p["id"]) for p in json.loads(bs_file.read_text(encoding="utf-8"))["products"]} if bs_file.exists() else set()
+    df["is_pilgrim_bestseller"] = (df.brand == "Pilgrim") & df.product_id.astype(str).isin(bs_ids)
+    df["all_listings_hidden"] = hidden_tag & ~has_visible & ~df.is_pilgrim_bestseller
+    df.loc[df.is_pilgrim_bestseller, "is_hidden"] = False
     # duplicates: same brand + normalised name + variant + size; keep the visible, in-stock, cheapest-listed one
     df["_rank"] = hidden_tag.astype(int) * 4 + (~df.in_stock.fillna(False)).astype(int) * 2 + df.is_freebie.astype(int)
     order = df.sort_values(["_rank", "price"]).index
@@ -328,7 +334,7 @@ def main():
     cols = ["brand", "source", "product_key", "product_id", "variant_id", "title", "variant", "segment", "category", "category_from",
             "gender", "size_value", "size_unit", "typical_size", "price", "mrp", "discount_pct", "price_per_100", "in_stock", "stock_unknown", "in_stock_effective",
             "actives", "strengths", "concerns", "claims", "rating", "review_count", "description_chars",
-            "is_freebie", "is_hidden", "all_listings_hidden", "is_combo", "is_duplicate", "manual_excluded", "in_v1_scope", "has_price", "shelf_ok_confidence",
+            "is_freebie", "is_hidden", "all_listings_hidden", "is_combo", "is_duplicate", "manual_excluded", "is_pilgrim_bestseller", "in_v1_scope", "has_price", "shelf_ok_confidence",
             "eligible_for_shelf", "confidence", "url", "type_tags", "description"]
     OUT.mkdir(parents=True, exist_ok=True)
     df[cols].to_csv(OUT / "products.csv", index=False, encoding="utf-8-sig")
