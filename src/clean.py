@@ -104,7 +104,8 @@ COMBO = R(r"combo|\bkit\b|(?<!face )\bpack\b|\d\s?(in\s?1\s?)?pack\b|bundle|\bdu
 FREEBIE_TITLE = R(r"free ?gift|freebie|\bsample\b|tester|complimentary|mystery box|gift box|\bgwp\b")
 FREEBIE_TYPE = R(r"gift|freebie|sample|tryplum|gwp")
 # exact hidden markers only ("Bestseller Upsell" is a normal merchandising tag on main listings, so plain "upsell" is NOT hidden)
-HIDDEN = R(r"hidden-product|\bhidden\b|upsell-product|hide__?product|hide-product|no-index|app-button-hide")
+# ("no-index" is an SEO setting - Conscious Chemist puts it on 551/638 products - so it does NOT mean hidden)
+HIDDEN = R(r"hidden-product|\bhidden\b|upsell-product|hide__?product|hide-product|app-button-hide")
 SALON = R(r"salon[- ]professional")  # Pilgrim's salon-only line (type "Salon professional" / tag "salon-professional")
 TITLE_OVERRIDES = [(R(r"peeling solution|peel solution|exfoliating solution"), ("skin", "scrub/exfoliator"))]
 SIZE = re.compile(r"(\d+(?:\.\d+)?)\s?(ml|g|gm|gms|grams?|kg|l|ltr|litre|liter)\b", re.I)
@@ -307,7 +308,7 @@ def main():
     df["typical_size"] = df.category.map(TYPICAL_SIZE)
     df["shelf_ok_confidence"] = ~((df.source == "manual") & (~df.confidence.isin(["high", "medium"])))
     df["has_price"] = df.price.fillna(0) > 1
-    df["eligible_for_shelf"] = (df.in_v1_scope & ~df.manual_excluded & ~df.is_freebie & ~df.is_hidden & ~df.is_combo & ~df.is_duplicate
+    df["eligible_for_shelf"] = (df.in_v1_scope & ~df.manual_excluded & ~df.is_freebie & ~df.is_hidden & ~df.all_listings_hidden & ~df.is_combo & ~df.is_duplicate
                                 & df.in_stock_effective & df.has_price & df.shelf_ok_confidence)
 
     cols = ["brand", "source", "product_key", "product_id", "variant_id", "title", "variant", "segment", "category", "category_from",

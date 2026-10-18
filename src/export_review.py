@@ -19,6 +19,8 @@ def why(r):
         return "freebie / gift / Rs 0-1"
     if r.is_hidden:
         return "hidden copy (a visible listing exists)"
+    if r.all_listings_hidden:
+        return "hidden on site (shoppers cannot find it)"
     if r.is_combo:
         return "combo / kit / multipack"
     if r.is_duplicate:

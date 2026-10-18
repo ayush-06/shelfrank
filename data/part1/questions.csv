@@ -1,0 +1,61 @@
+qid,need,category,style,language,budget_inr,concern,question
+N01-a-en,niacinamide serum,face serum,generic,en,,,What is the best niacinamide serum available in India?
+N01-b-en,niacinamide serum,face serum,need+budget,en,600,oily skin; acne,"Suggest a niacinamide serum for oily, acne-prone skin under ₹600."
+N01-c-en,niacinamide serum,face serum,conversational,en,,acne marks; oily skin,I have acne marks and an oily T-zone. Which face serum should I buy online in India?
+N01-a-hi,niacinamide serum,face serum,generic,hinglish,,,India mein sabse best niacinamide serum kaunsa hai?
+N01-b-hi,niacinamide serum,face serum,need+budget,hinglish,600,oily skin; acne,Oily aur acne-prone skin ke liye ₹600 ke andar koi achha niacinamide serum batao.
+N01-c-hi,niacinamide serum,face serum,conversational,hinglish,,acne marks; oily skin,"Mere face pe acne ke marks hain aur T-zone oily rehta hai. Online kaunsa serum lu?"
+N02-a-en,vitamin c serum,face serum,generic,en,,,Which is the best vitamin C serum in India?
+N02-b-en,vitamin c serum,face serum,need+budget,en,700,dullness; pigmentation,Recommend a vitamin C serum for dull skin and pigmentation under ₹700.
+N02-c-en,vitamin c serum,face serum,conversational,en,,dullness; tan,My skin looks dull and tanned after summer. Which vitamin C serum should I try?
+N02-a-hi,vitamin c serum,face serum,generic,hinglish,,,India mein best vitamin C serum kaunsa hai?
+N02-b-hi,vitamin c serum,face serum,need+budget,hinglish,700,dullness; pigmentation,Dull skin aur pigmentation ke liye ₹700 ke andar vitamin C serum suggest karo.
+N02-c-hi,vitamin c serum,face serum,conversational,hinglish,,dullness; tan,"Summer ke baad skin dull aur tanned lag rahi hai, kaunsa vitamin C serum try karun?"
+N03-a-en,sunscreen,sunscreen,generic,en,,,What is the best sunscreen for Indian skin?
+N03-b-en,sunscreen,sunscreen,need+budget,en,500,oily skin; no white cast,"Suggest a lightweight SPF 50 sunscreen for oily skin with no white cast, under ₹500."
+N03-c-en,sunscreen,sunscreen,conversational,en,,oily skin; heat,I commute daily in the Delhi heat and my skin gets oily. Which sunscreen should I use?
+N03-a-hi,sunscreen,sunscreen,generic,hinglish,,,Indian skin ke liye best sunscreen kaunsa hai?
+N03-b-hi,sunscreen,sunscreen,need+budget,hinglish,500,oily skin; no white cast,"Oily skin ke liye halka SPF 50 sunscreen batao jo white cast na chhode, ₹500 ke andar."
+N03-c-hi,sunscreen,sunscreen,conversational,hinglish,,oily skin; heat,"Roz Delhi ki garmi mein travel karti hoon aur skin oily ho jaati hai, kaunsa sunscreen lagaun?"
+N04-a-en,face wash for oily skin,face wash,generic,en,,oily skin,Which is the best face wash for oily skin in India?
+N04-b-en,face wash for oily skin,face wash,need+budget,en,350,acne; oily skin,Recommend a face wash for acne-prone oily skin under ₹350.
+N04-c-en,face wash for oily skin,face wash,conversational,en,,pimples; oily skin,I keep getting pimples and my face feels greasy by noon. Which face wash should I buy?
+N04-a-hi,face wash for oily skin,face wash,generic,hinglish,,oily skin,Oily skin ke liye India mein best face wash kaunsa hai?
+N04-b-hi,face wash for oily skin,face wash,need+budget,hinglish,350,acne; oily skin,Acne-prone oily skin ke liye ₹350 ke andar face wash suggest karo.
+N04-c-hi,face wash for oily skin,face wash,conversational,hinglish,,pimples; oily skin,"Baar baar pimples aa rahe hain aur dopahar tak face chipchipa ho jaata hai, kaunsa face wash lu?"
+N05-a-en,moisturiser for dry skin,moisturiser,generic,en,,dry skin,What is the best moisturiser for dry skin in India?
+N05-b-en,moisturiser for dry skin,moisturiser,need+budget,en,500,dry skin; sensitive skin,"Suggest a moisturiser for dry, sensitive skin under ₹500."
+N05-c-en,moisturiser for dry skin,moisturiser,conversational,en,,dry skin; flaky,My skin feels tight and flaky in winter. Which moisturiser should I use?
+N05-a-hi,moisturiser for dry skin,moisturiser,generic,hinglish,,dry skin,Dry skin ke liye India mein best moisturiser kaunsa hai?
+N05-b-hi,moisturiser for dry skin,moisturiser,need+budget,hinglish,500,dry skin; sensitive skin,Dry aur sensitive skin ke liye ₹500 ke andar moisturiser batao.
+N05-c-hi,moisturiser for dry skin,moisturiser,conversational,hinglish,,dry skin; flaky,"Sardiyon mein skin khinchi khinchi aur flaky ho jaati hai, kaunsa moisturiser lagaun?"
+N06-a-en,hair growth serum,hair serum,generic,en,,hairfall,What is the best hair growth serum in India?
+N06-b-en,hair growth serum,hair serum,need+budget,en,800,hairfall; thinning,Suggest a hair serum for hair fall and thinning under ₹800.
+N06-c-en,hair growth serum,hair serum,conversational,en,,thinning,My hair has become thin and I can see my scalp at the parting. Which hair growth serum should I try?
+N06-a-hi,hair growth serum,hair serum,generic,hinglish,,hairfall,India mein best hair growth serum kaunsa hai?
+N06-b-hi,hair growth serum,hair serum,need+budget,hinglish,800,hairfall; thinning,Hair fall aur patle hote baalon ke liye ₹800 ke andar hair serum suggest karo.
+N06-c-hi,hair growth serum,hair serum,conversational,hinglish,,thinning,"Mere baal patle ho gaye hain aur maang mein scalp dikhne laga hai, kaunsa hair growth serum try karun?"
+N07-a-en,anti-hairfall shampoo,shampoo,generic,en,,hairfall,Which is the best anti-hair fall shampoo in India?
+N07-b-en,anti-hairfall shampoo,shampoo,need+budget,en,500,hairfall,Recommend a shampoo for hair fall under ₹500.
+N07-c-en,anti-hairfall shampoo,shampoo,conversational,en,,hairfall,I lose a lot of hair every time I wash it. Which shampoo should I switch to?
+N07-a-hi,anti-hairfall shampoo,shampoo,generic,hinglish,,hairfall,India mein best anti-hairfall shampoo kaunsa hai?
+N07-b-hi,anti-hairfall shampoo,shampoo,need+budget,hinglish,500,hairfall,Hair fall ke liye ₹500 ke andar koi achha shampoo batao.
+N07-c-hi,anti-hairfall shampoo,shampoo,conversational,hinglish,,hairfall,"Har baar baal dhone pe bahut saare baal girte hain, kaunsa shampoo use karun?"
+N08-a-en,anti-dandruff shampoo,shampoo,generic,en,,dandruff,What is the best anti-dandruff shampoo in India?
+N08-b-en,anti-dandruff shampoo,shampoo,need+budget,en,400,dandruff; itchy scalp,Suggest an anti-dandruff shampoo for an itchy scalp under ₹400.
+N08-c-en,anti-dandruff shampoo,shampoo,conversational,en,,dandruff; itchy scalp,I have white flakes on my shoulders and an itchy scalp. Which shampoo will actually work?
+N08-a-hi,anti-dandruff shampoo,shampoo,generic,hinglish,,dandruff,India mein best anti-dandruff shampoo kaunsa hai?
+N08-b-hi,anti-dandruff shampoo,shampoo,need+budget,hinglish,400,dandruff; itchy scalp,Itchy scalp aur dandruff ke liye ₹400 ke andar shampoo suggest karo.
+N08-c-hi,anti-dandruff shampoo,shampoo,conversational,hinglish,,dandruff; itchy scalp,"Kandhon pe safed flakes girte hain aur scalp mein khujli hoti hai, kaunsa shampoo sach mein kaam karega?"
+N09-a-en,hair oil for hair growth,hair oil,generic,en,,hairfall,Which is the best hair oil for hair growth in India?
+N09-b-en,hair oil for hair growth,hair oil,need+budget,en,400,hairfall,Recommend a hair oil for hair fall under ₹400.
+N09-c-en,hair oil for hair growth,hair oil,conversational,en,,hairfall,My mother says I should oil my hair to stop hair fall. Which hair oil should I buy?
+N09-a-hi,hair oil for hair growth,hair oil,generic,hinglish,,hairfall,Hair growth ke liye India mein best hair oil kaunsa hai?
+N09-b-hi,hair oil for hair growth,hair oil,need+budget,hinglish,400,hairfall,Hair fall ke liye ₹400 ke andar hair oil batao.
+N09-c-hi,hair oil for hair growth,hair oil,conversational,hinglish,,hairfall,"Mummy kehti hain baalon mein tel lagao toh hair fall rukega, kaunsa hair oil lu?"
+N10-a-en,matte lipstick,lipstick,generic,en,,,What is the best long-lasting matte lipstick in India?
+N10-b-en,matte lipstick,lipstick,need+budget,en,600,nude shade,Suggest a nude matte lipstick for Indian skin tones under ₹600.
+N10-c-en,matte lipstick,lipstick,conversational,en,,long-lasting; wheatish skin,I need a lipstick that lasts through office hours and suits a wheatish skin tone. What should I buy?
+N10-a-hi,matte lipstick,lipstick,generic,hinglish,,,India mein best long-lasting matte lipstick kaunsi hai?
+N10-b-hi,matte lipstick,lipstick,need+budget,hinglish,600,nude shade,Indian skin tone ke liye ₹600 ke andar nude matte lipstick suggest karo.
+N10-c-hi,matte lipstick,lipstick,conversational,hinglish,,long-lasting; wheatish skin,"Office ke poore din tikne wali lipstick chahiye jo wheatish skin pe achhi lage, kaunsi lu?"
