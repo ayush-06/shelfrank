@@ -41,14 +41,14 @@ Insight,insightcosmetics.in,makeup,makeup,shopify,Insight,
 Mars,marscosmetics.in,makeup,makeup,shopify,Mars,
 Colorbar,colorbarcosmetics.com,makeup,makeup,shopify,Colorbar,
 Nivea,nivea.in,skin,legacy,sitemap,Beiersdorf,phase 1b
-Garnier,garnier.in,skin|hair,legacy,sitemap,L'Oreal,phase 1b
+Garnier,,skin|hair,legacy,manual,L'Oreal,garnier.in has articles only (no product pages)
 Maybelline,maybelline.co.in,makeup,legacy,sitemap,L'Oreal,phase 1b
 L'Oreal Paris,lorealparis.co.in,hair|makeup|skin,legacy,sitemap,L'Oreal,phase 1b
 Plix,plixlife.com,hair|skin,hair-t1,sitemap,Marico,phase 1b
 WOW Skin Science,buywow.in,hair|skin,hair-t2,sitemap,Body Cupid,phase 1b
 Be Bodywise,bebodywise.com,hair,hair-t1,sitemap,Mosaic,phase 1b
 Man Matters,manmatters.com,hair,hair-t1,sitemap,Mosaic,phase 1b
-Pond's,,skin,legacy,manual,HUL,no own store
+Pond's,ponds.in,skin,legacy,shopify,HUL,own Shopify store found 2026-10-18 (manual rows kept as backup)
 Parachute,,hair,legacy,manual,Marico,no own store
 Sunsilk,,hair,legacy,manual,HUL,no own store
 Clinic Plus,,hair,legacy,manual,HUL,no own store

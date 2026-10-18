@@ -29,11 +29,13 @@ PER_SITE_DELAY = 1.5
 ARTICLE = r"tips|about|ingredient|search|green-beauty|gisele|cruelty|offer|store-locator|faq|contact|privacy|terms|sitemap|blog|article|ambassador|women-of-worth|virtual|news|campaign|career|imprint|quiz|routine-finder|how-to|trend|look|tutorial|collection|category"
 
 BRANDS = {
-    "Nivea": {"sitemaps": ["https://www.nivea.in/sitemap.xml"], "include": r"/products/[^/]+/[^/]+/[^/]+", "exclude": ARTICLE},
-    "Garnier": {"sitemaps": ["https://www.garnier.in/sitemap.xml"], "include": r".", "exclude": ARTICLE},
+    # Nivea product pages end in -<id>.html; the other /products/ URLs are category pages
+    "Nivea": {"sitemaps": ["https://www.nivea.in/sitemap.xml"], "include": r"/products/[^/]+\.html$", "exclude": r"$^"},
+    # Garnier.in has no product pages (articles only) -> hand-entered like Pond's
     "Maybelline": {"sitemaps": ["https://www.maybelline.co.in/sitemap.xml"], "include": r".", "exclude": ARTICLE},
     "L'Oreal Paris": {"sitemaps": ["https://www.lorealparis.co.in/sitemap.xml"], "include": r".", "exclude": ARTICLE},
-    "Plix": {"sitemaps": ["https://www.plixlife.com/sitemap-products.xml"], "include": r"/product/", "exclude": r"$^"},
+    # Plix has no Product JSON-LD; product data lives in the Next.js __NEXT_DATA__ block
+    "Plix": {"sitemaps": ["https://www.plixlife.com/sitemap-products.xml"], "include": r"/product/", "exclude": r"$^", "extract": "plix_next"},
     "WOW Skin Science": {"sitemaps": ["https://www.buywow.in/sitemap.xml"], "include": r"/products/", "exclude": r"$^"},
     "Be Bodywise": {"sitemaps": ["https://bebodywise.com/sitemap-products.xml"], "include": r"/product/", "exclude": r"$^"},
     "Man Matters": {"sitemaps": ["https://manmatters.com/sitemap-products.xml"], "include": r"/dp/", "exclude": r"$^"},
@@ -110,6 +112,39 @@ def jsonld_products(page):
     return found
 
 
+def plix_product(page):
+    """Product fields + review COUNT from Plix's __NEXT_DATA__ (no review text, no image lists)."""
+    m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', page, re.S)
+    if not m:
+        return None
+    try:
+        ppd = json.loads(m.group(1))["props"]["pageProps"]["productPageData"]
+    except Exception:
+        return None
+    p = ppd.get("product") or {}
+    if not p.get("name"):
+        return None
+    try:
+        desc = " ".join(b.get("text", "") for b in json.loads(p.get("descriptionJson") or "{}").get("blocks", []))
+    except Exception:
+        desc = None
+    return {
+        "name": p.get("name"),
+        "slug": p.get("slug"),
+        "is_available": p.get("isAvailable"),
+        "pricing": p.get("pricing"),
+        "description": desc,
+        "seo_title": p.get("seoTitle"),
+        "seo_description": p.get("seoDescription"),
+        "category": (p.get("category") or {}).get("name"),
+        "collections": [c.get("name") for c in p.get("collections") or [] if isinstance(c, dict)],
+        "metadata": p.get("metadata"),
+        "variants": [{k: v.get(k) for k in ("name", "sku", "isAvailable", "pricing", "attributes")}
+                     for v in p.get("variants") or [] if isinstance(v, dict)],
+        "review_count": (ppd.get("productReviews") or {}).get("totalCount"),
+    }
+
+
 def meta(page, prop):
     m = re.search(rf'<meta[^>]+(?:property|name)=["\']{prop}["\'][^>]+content=["\']([^"\']*)', page, re.I)
     return html.unescape(m.group(1)) if m else None
@@ -145,8 +180,13 @@ def collect_brand(brand, cfg, out_dir):
             else:
                 page, status = fetch(url)
                 rec["status"] = status
-                prods = jsonld_products(page) if page else []
-                rec["jsonld_products"] = prods
+                if cfg.get("extract") == "plix_next":
+                    prod = plix_product(page) if page else None
+                    rec["plix_product"] = prod
+                    prods = [prod] if prod else []
+                else:
+                    prods = jsonld_products(page) if page else []
+                    rec["jsonld_products"] = prods
                 if page:
                     rec["title"] = meta(page, "og:title")
                     rec["description"] = meta(page, "og:description") or meta(page, "description")
