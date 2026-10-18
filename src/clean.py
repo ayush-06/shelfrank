@@ -103,7 +103,10 @@ COMBO = R(r"combo|\bkit\b|(?<!face )\bpack\b|\d\s?(in\s?1\s?)?pack\b|bundle|\bdu
 # freebie: judged on title + product TYPE only (tags are noisy: "Free Pouch", "FREEBIE COLLECTION" sit on normal products)
 FREEBIE_TITLE = R(r"free ?gift|freebie|\bsample\b|tester|complimentary|mystery box|gift box|\bgwp\b")
 FREEBIE_TYPE = R(r"gift|freebie|sample|tryplum|gwp")
-HIDDEN = R(r"hidden|upsell|hide_|hide-product|no-index|app-button-hide")
+# exact hidden markers only ("Bestseller Upsell" is a normal merchandising tag on main listings, so plain "upsell" is NOT hidden)
+HIDDEN = R(r"hidden-product|\bhidden\b|upsell-product|hide__?product|hide-product|no-index|app-button-hide")
+SALON = R(r"salon[- ]professional")  # Pilgrim's salon-only line (type "Salon professional" / tag "salon-professional")
+TITLE_OVERRIDES = [(R(r"peeling solution|peel solution|exfoliating solution"), ("skin", "scrub/exfoliator"))]
 SIZE = re.compile(r"(\d+(?:\.\d+)?)\s?(ml|g|gm|gms|grams?|kg|l|ltr|litre|liter)\b", re.I)
 PCT = re.compile(r"(\d+(?:\.\d+)?)\s?%\s?([A-Za-z][A-Za-z\-]+(?: [A-Za-z\-]+)?)")
 MEN = R(r"\bmen\b|\bmen's|\bmens\b|for him|\bman\b")
@@ -162,7 +165,7 @@ def rows_shopify():
                     "description": text(p.get("body_html")), "price": num(v.get("price")), "mrp": num(v.get("compare_at_price")),
                     "in_stock": bool(v.get("available")), "url": f"https://{host}/products/{p.get('handle')}",
                     "rating": None, "review_count": None, "size_hint": "", "confidence": "",
-                    "raw_hidden": bool(re.search(r"hidden|upsell", tags, re.I)),
+                    "raw_hidden": bool(HIDDEN.search(tags)),
                 }
 
 
@@ -233,6 +236,12 @@ def main():
     cls = df.apply(lambda r: classify(r["type_tags"].split("|")[0], r["title"], r["type_tags"], r["description"][:300]),
                    axis=1, result_type="expand")
     df[["segment", "category", "category_from"]] = cls
+    # salon-only products are out of scope (decided with the user 2026-10-19)
+    salon = df.type_tags.str.contains(SALON)
+    df.loc[salon, ["segment", "category", "category_from"]] = ["other", "salon professional", "type/tags"]
+    for rx, (seg, cat) in TITLE_OVERRIDES:
+        hit = df.title.str.contains(rx)
+        df.loc[hit, ["segment", "category", "category_from"]] = [seg, cat, "title override"]
     # out-of-scope words in the TITLE always win (e.g. type says "Cream" but title says "Baby ... Face Cream")
     other_rules = [(seg, cat, rx) for seg, cat, rx in CATEGORY_RULES if seg == "other"]
     for i, t in df.title.items():
@@ -275,7 +284,9 @@ def main():
     df["stock_unknown"] = df.brand.isin(non_selling) | df.in_stock.isna()
     df["in_stock_effective"] = (df.in_stock == True) | df.stock_unknown
     df["is_combo"] = df.apply(lambda r: bool(COMBO.search(f"{r.title} {r.type_tags.split('|')[0]}")), axis=1)
-    norm = (df.title.str.lower().str.replace(SIZE, "", regex=True).str.replace(r"[^a-z0-9]+", " ", regex=True).str.strip())
+    # punctuation first, then sizes, so "50gm" and "50.gm" (an A/B-test pair of listings) normalise to the same key
+    norm = (df.title.str.lower().str.replace(r"[^a-z0-9]+", " ", regex=True).str.replace(SIZE, "", regex=True)
+            .str.replace(r"\s+", " ", regex=True).str.strip())
     df["product_key"] = df.brand + "|" + norm
     # hidden: some brands (e.g. Pilgrim) tag real, sold products "hidden-product". A hidden listing is only dropped
     # when a VISIBLE listing of the same product exists; if every listing is hidden we keep one and flag it.
@@ -288,17 +299,21 @@ def main():
     order = df.sort_values(["_rank", "price"]).index
     first = df.loc[order].duplicated(["product_key", "variant", "size_value"], keep="first")
     df["is_duplicate"] = first.reindex(df.index)
+    excl = pd.read_csv(ROOT / "data" / "manual" / "exclusions.csv")
+    df["manual_excluded"] = False
+    for e in excl.itertuples():
+        df.loc[(df.brand == e.brand) & df.title.str.contains(e.title_contains, regex=False), "manual_excluded"] = True
     df["in_v1_scope"] = df.category.isin(V1_SCOPE)
     df["typical_size"] = df.category.map(TYPICAL_SIZE)
     df["shelf_ok_confidence"] = ~((df.source == "manual") & (~df.confidence.isin(["high", "medium"])))
     df["has_price"] = df.price.fillna(0) > 1
-    df["eligible_for_shelf"] = (df.in_v1_scope & ~df.is_freebie & ~df.is_hidden & ~df.is_combo & ~df.is_duplicate
+    df["eligible_for_shelf"] = (df.in_v1_scope & ~df.manual_excluded & ~df.is_freebie & ~df.is_hidden & ~df.is_combo & ~df.is_duplicate
                                 & df.in_stock_effective & df.has_price & df.shelf_ok_confidence)
 
     cols = ["brand", "source", "product_key", "product_id", "variant_id", "title", "variant", "segment", "category", "category_from",
             "gender", "size_value", "size_unit", "typical_size", "price", "mrp", "discount_pct", "price_per_100", "in_stock", "stock_unknown", "in_stock_effective",
             "actives", "strengths", "concerns", "claims", "rating", "review_count", "description_chars",
-            "is_freebie", "is_hidden", "all_listings_hidden", "is_combo", "is_duplicate", "in_v1_scope", "has_price", "shelf_ok_confidence",
+            "is_freebie", "is_hidden", "all_listings_hidden", "is_combo", "is_duplicate", "manual_excluded", "in_v1_scope", "has_price", "shelf_ok_confidence",
             "eligible_for_shelf", "confidence", "url", "type_tags", "description"]
     OUT.mkdir(parents=True, exist_ok=True)
     df[cols].to_csv(OUT / "products.csv", index=False, encoding="utf-8-sig")

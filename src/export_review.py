@@ -13,6 +13,8 @@ VIEW = ["status", "brand", "title", "variant", "segment", "category", "gender", 
 
 
 def why(r):
+    if r.manual_excluded:
+        return "excluded by your review"
     if r.is_freebie:
         return "freebie / gift / Rs 0-1"
     if r.is_hidden:
