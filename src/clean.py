@@ -232,6 +232,20 @@ def main():
     df = pd.DataFrame([*rows_shopify(), *rows_pages(), *rows_manual()])
     n0 = len(df)
 
+    # MRPs found by hand for brands whose own sites show no price (L'Oreal Paris, Nivea); the selling price is unknown,
+    # so price = MRP, and the same confidence rule as the hand-entered brands applies
+    add = pd.read_csv(ROOT / "data" / "manual" / "price_additions.csv")
+    add = add[add.mrp_inr.notna()].drop_duplicates(["brand", "title"]).set_index(["brand", "title"])
+    for i in df.index[df.brand.isin(add.index.get_level_values(0)) & df.price.isna()]:
+        key = (df.at[i, "brand"], df.at[i, "title"])
+        if key in add.index:
+            a = add.loc[key]
+            df.at[i, "price"] = df.at[i, "mrp"] = float(a.mrp_inr)
+            df.at[i, "confidence"] = a.confidence
+            if not df.at[i, "size_hint"]:
+                df.at[i, "size_hint"] = f"{a['size']} {a['unit']}"
+            df.at[i, "source"] = "page + manual price"
+
     # classification: title first, then type/tags, then description start
     # the brand's own product TYPE first when it is specific (e.g. "Lipstick"), then title, then tags, then description
     cls = df.apply(lambda r: classify(r["type_tags"].split("|")[0], r["title"], r["type_tags"], r["description"][:300]),
@@ -306,7 +320,7 @@ def main():
         df.loc[(df.brand == e.brand) & df.title.str.contains(e.title_contains, regex=False), "manual_excluded"] = True
     df["in_v1_scope"] = df.category.isin(V1_SCOPE)
     df["typical_size"] = df.category.map(TYPICAL_SIZE)
-    df["shelf_ok_confidence"] = ~((df.source == "manual") & (~df.confidence.isin(["high", "medium"])))
+    df["shelf_ok_confidence"] = ~(df.source.isin(["manual", "page + manual price"]) & (~df.confidence.isin(["high", "medium"])))
     df["has_price"] = df.price.fillna(0) > 1
     df["eligible_for_shelf"] = (df.in_v1_scope & ~df.manual_excluded & ~df.is_freebie & ~df.is_hidden & ~df.all_listings_hidden & ~df.is_combo & ~df.is_duplicate
                                 & df.in_stock_effective & df.has_price & df.shelf_ok_confidence)
