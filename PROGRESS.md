@@ -23,8 +23,8 @@ A private study of **how the AI models behind shopping assistants recommend Indi
 | Phase | Status |
 |---|---|
 | 1. Collect catalogues | ✅ 41 Shopify brands, 10,556 raw products (`data/raw/2026-10-17/shopify/`); 7 brands via product pages, 1,626 (`.../pages/`); 85 hand-entered rows (`data/manual/legacy_brands.csv`); L'Oréal Paris and Nivea MRPs (`data/manual/price_additions.csv`) |
-| 1b. Pending data | ⏳ Kay Beauty (Shopify 429); ratings and descriptions for shelf products only (after the throttling lifts) |
-| 2. Clean | ✅ `src/clean.py` → `data/clean/products.csv`: **2,120 shelf-eligible products, 56 brands, Pilgrim 60**. Review exports go to `C:\Users\as09a\Desktop\ShelfRank - cleaned data\` via `src/export_review.py` |
+| 1b. Pending data | Shopify still 429 on product pages (checked 2026-10-21, 3 days running). **Decided 2026-10-21:** Kay Beauty lipsticks hand-entered ✅ (9 rows; 7 shelf-eligible; mini sets excluded); **Part 2 uses CONTROLLED ratings** (we set the stars: equal / boost one / lower one / review-count only, rotated across products), so real ratings are optional. Retry Shopify about 2026-10-28 with one request; never get around the block |
+| 2. Clean | ✅ `src/clean.py` → `data/clean/products.csv`: **2,127 shelf-eligible products, 57 brands, Pilgrim 60** (incl. 7 hand-entered Kay Beauty lipsticks, 2026-10-21). Review exports go to `C:\Users\as09a\Desktop\ShelfRank - cleaned data\` via `src/export_review.py` |
 | Part 1 questions | ✅ Approved: `data/part1/questions.csv`, 60 questions (10 needs × 3 styles × English/Hinglish), plain language, no brands or ingredients |
 | Part 1 pilot | ✅ 2026-10-20: 102 answers, $0.31. Pilgrim named in 3/102. Minimalist dominates. GPT-6 names 0–1 products. Web mode surfaces more D2C brands |
 | Part 1 full run | 🔄 **Started 2026-10-21** (user approved). Run files `logs/part1/full_memory.jsonl` and `logs/part1/full_web.jsonl`. Caps: memory $2.30 total, web $1.50 total (spent so far before the run: pilot $0.31 + cost test $0.12) |
@@ -58,6 +58,9 @@ On Windows, set `PYTHONIOENCODING=utf-8` when printing.
 
 ## Models (OpenRouter, prices checked 2026-10-19)
 GPT-6 Luna, GPT-6 Sol, Gemini 3.1 Flash-Lite, Gemini 3.6 Flash, Claude Haiku 5.5, Claude Sonnet 5.5, Nova 2 Lite, Llama 4 Maverick, DeepSeek V4 Flash (see `MODELS` in `src/part1_run.py`). Web mode uses Exa at $0.007 per search.
+
+## Part 2 design notes (decided with the user)
+- **Controlled ratings with a gap ladder** (user idea 2026-10-21): base 4.2★ for all; boost one product to 4.4 / 4.6 / 4.8 / 5.0★ (+0.2/+0.4/+0.6/+0.8) and lower to 4.0 / 3.8 / 3.4★; also review-count-only (4.2★ with 50 vs 5,000 reviews). Rotate the boosted product across all 8 (incl. Pilgrim). Run the full ladder in the Part 2 PILOT on cheap models; the full run keeps the 2–3 gaps that matter. Watch for a 'too good to be true' tipping point at 4.8–5.0★.
 
 ## Next steps
 1. ~~User go → full Part 1 run.~~ **Running** (see Status). If interrupted, re-run the same commands; the runner resumes.
