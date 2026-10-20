@@ -18,3 +18,6 @@ __pycache__/
 Thumbs.db
 .vscode/
 .idea/
+
+# full cleaned table is 34 MB and rebuilt by src/clean.py; a readable copy is results/review/1_all_rows_with_status.csv
+data/clean/products.csv

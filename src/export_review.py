@@ -4,9 +4,11 @@ import os
 import shutil
 import sys
 
+from pathlib import Path
+
 import pandas as pd
 
-OUT_DIR = sys.argv[1] if len(sys.argv) > 1 else "C:/Users/as09a/Desktop/ShelfRank - cleaned data"
+OUT_DIR = sys.argv[1] if len(sys.argv) > 1 else str(Path(__file__).resolve().parent.parent / "results" / "review")
 VIEW = ["status", "brand", "title", "variant", "segment", "category", "gender", "size_value", "size_unit", "price", "mrp",
         "discount_pct", "price_per_100", "in_stock", "all_listings_hidden", "actives", "strengths", "concerns", "claims",
         "rating", "review_count", "description_chars", "url"]

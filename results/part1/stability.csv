@@ -1,0 +1,7 @@
+﻿model,overlap
+claude-haiku-5.5,0.48
+deepseek-v4-flash,0.32
+gemini-3.1-flash-lite,0.52
+gpt-6-luna,0.71
+llama-4-maverick,0.6
+nova-2-lite-v1,0.39

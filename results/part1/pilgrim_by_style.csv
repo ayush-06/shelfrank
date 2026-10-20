@@ -1,0 +1,6 @@
+﻿mode,style,answers,pilgrim_pct
+memory,conversational,420,0.5
+memory,generic,420,3.3
+memory,need+budget,420,2.6
+web_exa,need+budget,80,5.0
+web_native,need+budget,20,10.0

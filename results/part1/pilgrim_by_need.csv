@@ -1,0 +1,31 @@
+﻿mode,need,answers,pilgrim_pct
+memory,face wash for oily skin,126,0.0
+memory,hair growth serum,126,12.7
+memory,hair oil for hair growth,126,0.0
+memory,long-lasting lipstick,126,0.0
+memory,moisturiser for dry skin,126,0.0
+memory,serum for acne marks,126,3.2
+memory,serum for glowing skin,126,5.6
+memory,shampoo for dandruff,126,0.0
+memory,shampoo for hair fall,126,0.0
+memory,sunscreen,126,0.0
+web_exa,face wash for oily skin,8,0.0
+web_exa,hair growth serum,8,25.0
+web_exa,hair oil for hair growth,8,0.0
+web_exa,long-lasting lipstick,8,0.0
+web_exa,moisturiser for dry skin,8,0.0
+web_exa,serum for acne marks,8,0.0
+web_exa,serum for glowing skin,8,0.0
+web_exa,shampoo for dandruff,8,25.0
+web_exa,shampoo for hair fall,8,0.0
+web_exa,sunscreen,8,0.0
+web_native,face wash for oily skin,2,0.0
+web_native,hair growth serum,2,50.0
+web_native,hair oil for hair growth,2,0.0
+web_native,long-lasting lipstick,2,0.0
+web_native,moisturiser for dry skin,2,0.0
+web_native,serum for acne marks,2,0.0
+web_native,serum for glowing skin,2,0.0
+web_native,shampoo for dandruff,2,50.0
+web_native,shampoo for hair fall,2,0.0
+web_native,sunscreen,2,0.0

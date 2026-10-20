@@ -1,0 +1,635 @@
+﻿mode,brand,answers,share_pct,first_pct,in_our_catalogue
+memory,Minimalist,1260,28.3,12.2,True
+memory,Neutrogena,1260,22.7,4.2,False
+memory,Cetaphil,1260,15.1,8.3,False
+memory,Himalaya,1260,15.0,1.4,True
+memory,The Ordinary,1260,14.0,5.5,False
+memory,Mamaearth,1260,13.8,2.6,True
+memory,The Derma Co,1260,11.5,2.4,True
+memory,L'Oreal Paris,1260,9.9,0.6,True
+memory,Nizoral,1260,9.0,4.7,False
+memory,Plum,1260,8.6,0.0,True
+memory,Sebamed,1260,8.3,1.3,False
+memory,Maybelline,1260,8.3,6.0,True
+memory,La Roche-Posay,1260,7.9,1.0,False
+memory,Head & Shoulders,1260,7.5,2.0,True
+memory,CeraVe,1260,7.2,3.0,False
+memory,Dot & Key,1260,7.1,0.0,True
+memory,WOW Skin Science,1260,6.0,0.1,True
+memory,Biotique,1260,5.6,0.3,True
+memory,Indulekha,1260,5.6,1.6,True
+memory,Re'equil,1260,5.2,0.8,True
+memory,Dove,1260,5.2,0.7,True
+memory,Dr. Sheth's,1260,4.9,0.2,True
+memory,Lakmé,1260,4.9,0.9,False
+memory,Pond's,1260,4.8,0.0,True
+memory,Dr. Bronner's,1260,4.4,0.0,False
+memory,MAC,1260,4.3,0.6,False
+memory,Garnier,1260,4.1,0.2,True
+memory,Simple,1260,4.1,0.7,False
+memory,Dabur,1260,4.0,0.6,True
+memory,Parachute,1260,3.8,1.3,True
+memory,Nivea,1260,3.7,0.2,True
+memory,Vaseline,1260,3.7,0.0,False
+memory,Bioderma,1260,3.6,0.0,False
+memory,Khadi,1260,3.6,0.2,False
+memory,Kama Ayurveda,1260,3.5,0.2,False
+memory,Aveeno,1260,3.5,0.2,False
+memory,Lakme,1260,3.3,0.8,True
+memory,Lotus Herbals,1260,3.2,0.2,True
+memory,Patanjali,1260,3.2,1.1,False
+memory,La Shield,1260,3.1,1.1,False
+memory,SUGAR,1260,3.1,0.2,True
+memory,The Body Shop,1260,3.0,0.1,False
+memory,Colorbar,1260,2.8,0.0,True
+memory,Cipla,1260,2.7,0.6,False
+memory,Paula's Choice,1260,2.5,0.0,False
+memory,Fixderma,1260,2.5,1.2,True
+memory,WishCare,1260,2.5,0.3,False
+memory,Selsun Blue,1260,2.5,0.0,False
+memory,Faces Canada,1260,2.5,0.0,True
+memory,Pantene,1260,2.4,0.4,True
+memory,Kesh King,1260,2.2,0.6,True
+memory,Pilgrim,1260,2.1,0.0,True
+memory,Selsun,1260,2.1,0.0,False
+memory,Aqualogica,1260,1.9,0.1,True
+memory,TRESemme,1260,1.9,0.0,True
+memory,Nizral,1260,1.9,0.6,False
+memory,Scalpe Plus,1260,1.9,0.5,False
+memory,Nykaa,1260,1.9,0.0,False
+memory,Huda Beauty,1260,1.9,0.3,False
+memory,Eucerin,1260,1.7,0.0,False
+memory,Traya,1260,1.7,0.0,True
+memory,Khadi Natural,1260,1.7,0.0,False
+memory,Deconstruct,1260,1.6,0.1,True
+memory,Forest Essentials,1260,1.6,0.0,False
+memory,Vanicream,1260,1.6,0.1,False
+memory,Ketomac,1260,1.6,0.8,False
+memory,Dermalogica,1260,1.5,0.0,False
+memory,Bajaj Almond Drops,1260,1.4,0.2,True
+memory,Olay,1260,1.3,1.0,False
+memory,Scalpe Pro,1260,1.3,0.5,False
+memory,Swiss Beauty,1260,1.3,0.0,True
+memory,Avene,1260,1.2,0.0,False
+memory,VLCC,1260,1.2,0.0,False
+memory,Clean & Clear,1260,1.2,0.2,False
+memory,LA Girl,1260,1.2,0.9,False
+memory,Innisfree,1260,1.1,0.0,False
+memory,Venusia,1260,1.1,0.3,False
+memory,Tugain,1260,1.1,0.2,False
+memory,Rogaine,1260,1.1,0.8,False
+memory,Soulflower,1260,1.1,0.2,False
+memory,Kiehl's,1260,1.0,0.0,False
+memory,EltaMD,1260,1.0,0.2,False
+memory,Kerastase,1260,1.0,0.6,False
+memory,Ketocip,1260,1.0,0.4,False
+memory,Insight,1260,1.0,0.1,True
+memory,Revlon,1260,1.0,0.0,False
+memory,Charlotte Tilbury,1260,1.0,0.0,False
+memory,SkinCeuticals,1260,0.9,0.4,False
+memory,Mintop,1260,0.9,0.4,False
+memory,Bare Anatomy,1260,0.9,0.2,True
+memory,Scalpe+,1260,0.9,0.3,False
+memory,NYX,1260,0.9,0.0,False
+memory,Aquaphor,1260,0.8,0.0,False
+memory,The Moms Co.,1260,0.8,0.0,False
+memory,The Man Company,1260,0.8,0.0,False
+memory,Clinic Plus,1260,0.8,0.0,True
+memory,The Inkey List,1260,0.7,0.0,False
+memory,Foxtale,1260,0.7,0.0,True
+memory,Briogeo,1260,0.7,0.0,False
+memory,Alpecin,1260,0.7,0.0,False
+memory,Bblunt,1260,0.7,0.0,True
+memory,Klairs,1260,0.6,0.2,False
+memory,Good Molecules,1260,0.6,0.0,False
+memory,LA Looks,1260,0.6,0.4,False
+memory,Drunk Elephant,1260,0.6,0.0,False
+memory,Laneige,1260,0.6,0.0,False
+memory,Conscious Chemist,1260,0.6,0.0,True
+memory,Biore,1260,0.6,0.0,False
+memory,Lottery,1260,0.6,0.0,False
+memory,SebaMed,1260,0.6,0.0,False
+memory,SheaMoisture,1260,0.6,0.1,False
+memory,Vegamour,1260,0.6,0.0,False
+memory,Dr. Reddy's,1260,0.6,0.2,False
+memory,Nioxin,1260,0.6,0.2,False
+memory,Kérastase,1260,0.6,0.0,False
+memory,Scalpe,1260,0.6,0.5,False
+memory,Dr. Batra's,1260,0.6,0.1,False
+memory,Clear,1260,0.6,0.0,False
+memory,Milani,1260,0.6,0.0,False
+memory,Nykaa Cosmetics,1260,0.6,0.0,False
+memory,Anastasia Beverly Hills,1260,0.6,0.0,False
+memory,Saslic,1260,0.5,0.1,False
+memory,Biolage,1260,0.5,0.0,False
+memory,Trichup,1260,0.5,0.0,False
+memory,Vaadi Herbals,1260,0.5,0.0,False
+memory,Olaplex,1260,0.5,0.0,False
+memory,Tricare,1260,0.5,0.0,False
+memory,UrbanBotanics,1260,0.5,0.1,False
+memory,Lottery Beauty,1260,0.5,0.0,False
+memory,Fenty Beauty,1260,0.5,0.0,False
+memory,PanOxyl,1260,0.5,0.0,False
+memory,Minoxidil,1260,0.5,0.2,False
+memory,Suganda,1260,0.4,0.0,False
+memory,Sunday Riley,1260,0.4,0.0,False
+memory,Beauty of Joseon,1260,0.4,0.0,False
+memory,Supergoop!,1260,0.4,0.1,False
+memory,Clinique,1260,0.4,0.0,False
+memory,Emolene,1260,0.4,0.0,False
+memory,Physiogel,1260,0.4,0.0,False
+memory,Beardo,1260,0.4,0.0,False
+memory,Moroccanoil,1260,0.4,0.3,False
+memory,Regaine,1260,0.4,0.1,False
+memory,Bombay Shaving Company,1260,0.4,0.0,False
+memory,NARS,1260,0.4,0.0,False
+memory,Wet n' Wild,1260,0.4,0.0,False
+memory,Kylie Cosmetics,1260,0.4,0.0,False
+memory,Aziderm,1260,0.3,0.0,False
+memory,Timeless,1260,0.3,0.0,False
+memory,Differin,1260,0.3,0.0,False
+memory,Morr F,1260,0.3,0.1,False
+memory,Toppik,1260,0.3,0.0,False
+memory,Man Matters,1260,0.3,0.2,True
+memory,Pattern,1260,0.3,0.2,False
+memory,Alva Baby,1260,0.3,0.1,False
+memory,Keto-C,1260,0.3,0.1,False
+memory,Ducray,1260,0.3,0.0,False
+memory,Zandu Care (Navratna),1260,0.3,0.0,True
+memory,Kesh Kanti,1260,0.3,0.1,False
+memory,Estée Lauder,1260,0.3,0.0,False
+memory,Colorpop,1260,0.3,0.0,False
+memory,Colourpop,1260,0.3,0.0,False
+memory,Paul Mitchell,1260,0.3,0.0,False
+memory,Smashbox,1260,0.3,0.0,False
+memory,Bobbi Brown,1260,0.3,0.0,False
+memory,Medix,1260,0.2,0.0,False
+memory,Lacto Calamine,1260,0.2,0.0,False
+memory,O3+,1260,0.2,0.2,False
+memory,The Face Shop,1260,0.2,0.0,False
+memory,Lottery Skin,1260,0.2,0.0,False
+memory,Mediheal,1260,0.2,0.0,False
+memory,Supergoop,1260,0.2,0.0,False
+memory,Suncros,1260,0.2,0.0,False
+memory,Kaya,1260,0.2,0.0,False
+memory,Coola,1260,0.2,0.0,False
+memory,The Duraline,1260,0.2,0.0,False
+memory,Dermafique,1260,0.2,0.0,False
+memory,L'Occitane,1260,0.2,0.0,False
+memory,SkinFix,1260,0.2,0.0,False
+memory,Kirkland Signature,1260,0.2,0.0,False
+memory,Boldify,1260,0.2,0.0,False
+memory,minoxidil,1260,0.2,0.2,False
+memory,Revita,1260,0.2,0.0,False
+memory,Ustraa,1260,0.2,0.0,False
+memory,Maple Holistics,1260,0.2,0.0,False
+memory,Pura D'or,1260,0.2,0.0,False
+memory,Keeps,1260,0.2,0.0,False
+memory,PURA D'OR,1260,0.2,0.0,False
+memory,Minoxytop,1260,0.2,0.1,False
+memory,ketoconazole 2% shampoo,1260,0.2,0.0,False
+memory,Redken,1260,0.2,0.0,False
+memory,Vichy,1260,0.2,0.0,False
+memory,Briar Smoke,1260,0.2,0.0,False
+memory,Plix,1260,0.2,0.0,True
+memory,Cocopear,1260,0.2,0.1,False
+memory,Keto-CZ,1260,0.2,0.0,False
+memory,The Body,1260,0.2,0.0,False
+memory,Bhringraj,1260,0.2,0.0,False
+memory,Ketocon,1260,0.2,0.1,False
+memory,Denorex,1260,0.2,0.0,False
+memory,Mielle Organics,1260,0.2,0.0,False
+memory,Nayaka,1260,0.2,0.0,False
+memory,Khadi Global,1260,0.2,0.0,False
+memory,Sesa,1260,0.2,0.0,False
+memory,Rimmel,1260,0.2,0.0,False
+memory,Mars,1260,0.2,0.0,True
+memory,KVD Beauty,1260,0.2,0.0,False
+memory,Blue Heaven,1260,0.2,0.0,False
+memory,Medimix,1260,0.2,0.0,False
+memory,Duraline,1260,0.2,0.0,False
+memory,Sebogel,1260,0.2,0.0,False
+memory,Maelove,1260,0.2,0.0,False
+memory,COSRX,1260,0.2,0.0,False
+memory,Sonalus,1260,0.2,0.0,False
+memory,Naturium,1260,0.2,0.0,False
+memory,ISDIN,1260,0.2,0.0,False
+memory,Earth Rhythm,1260,0.2,0.0,True
+memory,Brinton,1260,0.2,0.0,False
+memory,DHC,1260,0.2,0.0,False
+memory,Excela,1260,0.2,0.0,False
+memory,BoroPlus,1260,0.2,0.0,False
+memory,Avène,1260,0.2,0.0,False
+memory,Boroplus,1260,0.2,0.0,False
+memory,La Mer,1260,0.2,0.0,False
+memory,Mielle,1260,0.2,0.0,False
+memory,Nutrafol,1260,0.2,0.0,False
+memory,Viviscal,1260,0.2,0.0,False
+memory,Alva,1260,0.2,0.0,False
+memory,Kirkland,1260,0.2,0.1,False
+memory,Generic,1260,0.2,0.1,False
+memory,Finasteride,1260,0.2,0.0,False
+memory,Streax Professional,1260,0.2,0.1,False
+memory,St.Botanica,1260,0.2,0.0,False
+memory,Naturals,1260,0.2,0.1,False
+memory,Keraglo,1260,0.2,0.0,False
+memory,Pureology,1260,0.2,0.0,False
+memory,Anaboom,1260,0.2,0.1,False
+memory,Clear Men,1260,0.2,0.0,False
+memory,Danclear,1260,0.2,0.0,False
+memory,Coco Soul,1260,0.2,0.0,False
+memory,Organic India,1260,0.2,0.0,False
+memory,Brahmi,1260,0.2,0.1,False
+memory,Skinceuticals,1260,0.2,0.1,False
+memory,Bello,1260,0.2,0.0,False
+memory,UV Doux,1260,0.2,0.0,False
+memory,Plantur,1260,0.2,0.0,False
+memory,Anagain,1260,0.2,0.0,False
+memory,Matrix,1260,0.2,0.1,False
+memory,OGX,1260,0.2,0.0,False
+memory,Love Beauty & Planet,1260,0.2,0.0,False
+memory,Baidyanath,1260,0.2,0.0,False
+memory,Kay Beauty,1260,0.2,0.0,True
+memory,Bioré,1260,0.2,0.0,False
+memory,Ruler,1260,0.2,0.0,False
+memory,Retino-A,1260,0.1,0.0,False
+memory,Tretiva,1260,0.1,0.0,False
+memory,Pillowtalk,1260,0.1,0.0,False
+memory,Topicals,1260,0.1,0.0,False
+memory,We Are Feel Good,1260,0.1,0.0,False
+memory,Melano CC,1260,0.1,0.0,False
+memory,ISNTREE,1260,0.1,0.0,False
+memory,Skin Aqua,1260,0.1,0.0,False
+memory,Wishful,1260,0.1,0.0,False
+memory,Blue Lizard,1260,0.1,0.0,False
+memory,Ultraviolette,1260,0.1,0.0,False
+memory,Lacto Calcite,1260,0.1,0.0,False
+memory,St. Ives,1260,0.1,0.0,False
+memory,Ben Nye,1260,0.1,0.0,False
+memory,Thiamina,1260,0.1,0.0,False
+memory,Lottery's,1260,0.1,0.0,False
+memory,Skinfix,1260,0.1,0.0,False
+memory,Moisturex,1260,0.1,0.0,False
+memory,Cosrx,1260,0.1,0.0,False
+memory,Ahaglow,1260,0.1,0.0,False
+memory,Palmer's,1260,0.1,0.0,False
+memory,Venusia Max,1260,0.1,0.0,False
+memory,Khadi Essentials,1260,0.1,0.0,False
+memory,Kerahealth,1260,0.1,0.0,False
+memory,Minoxidil (generic),1260,0.1,0.1,False
+memory,St Botanica,1260,0.1,0.1,False
+memory,Wishcare,1260,0.1,0.0,False
+memory,Procter & Gamble,1260,0.1,0.0,False
+memory,Hair4Sure,1260,0.1,0.0,False
+memory,Vega,1260,0.1,0.0,False
+memory,Madhava Ayurveda,1260,0.1,0.0,False
+memory,Kasturi Manjan,1260,0.1,0.1,False
+memory,Hers,1260,0.1,0.0,False
+memory,Hair 4U,1260,0.1,0.0,False
+memory,Cepro,1260,0.1,0.0,False
+memory,Triclosan,1260,0.1,0.0,False
+memory,mCaffeine,1260,0.1,0.0,True
+memory,Kaya Clinic,1260,0.1,0.0,False
+memory,Glow Recipe,1260,0.1,0.0,False
+memory,Neostrata,1260,0.1,0.0,False
+memory,The Body Positive,1260,0.1,0.0,False
+memory,Cantu,1260,0.1,0.0,False
+memory,K18,1260,0.1,0.0,False
+memory,R+Co,1260,0.1,0.0,False
+memory,Kerahair,1260,0.1,0.1,False
+memory,Kenzoral,1260,0.1,0.0,False
+memory,Nirveda,1260,0.1,0.1,False
+memory,Yuskin,1260,0.1,0.0,False
+memory,Ketoril,1260,0.1,0.0,False
+memory,Vagad's,1260,0.1,0.0,False
+memory,Derma-E,1260,0.1,0.0,False
+memory,MG217,1260,0.1,0.0,False
+memory,PGM-17,1260,0.1,0.0,False
+memory,Natura First,1260,0.1,0.0,False
+memory,Sonalus Pharmaceuticals,1260,0.1,0.0,False
+memory,Max Care,1260,0.1,0.0,False
+memory,Kesh Raj,1260,0.1,0.0,False
+memory,Xerina,1260,0.1,0.0,False
+memory,Dersol,1260,0.1,0.0,False
+memory,Amish,1260,0.1,0.1,False
+memory,Jamaican Black Castor Oil,1260,0.1,0.0,False
+memory,Vedaka,1260,0.1,0.0,False
+memory,Brahmi Herbals,1260,0.1,0.0,False
+memory,Local Ayurvedic Brands,1260,0.1,0.0,False
+memory,Nykaa Fashion,1260,0.1,0.0,False
+memory,HerForest,1260,0.1,0.0,False
+memory,MyGlamm,1260,0.1,0.0,False
+memory,Medlife,1260,0.1,0.0,False
+memory,Ega,1260,0.1,0.0,False
+memory,Epiduo,1260,0.1,0.0,False
+memory,Alpha Arbutin + Niacinamide combo serum,1260,0.1,0.0,False
+memory,Organic Harvest,1260,0.1,0.0,False
+memory,Snail White,1260,0.1,0.0,False
+memory,Cos de Baha,1260,0.1,0.0,False
+memory,Shiseido,1260,0.1,0.0,False
+memory,Australian Gold,1260,0.1,0.0,False
+memory,Sunscoop,1260,0.1,0.0,False
+memory,Derma Essentia,1260,0.1,0.0,False
+memory,Ethiglow,1260,0.1,0.0,False
+memory,Episoft,1260,0.1,0.0,False
+memory,Black Opal,1260,0.1,0.0,False
+memory,AcneStar,1260,0.1,0.0,False
+memory,Softymo,1260,0.1,0.0,False
+memory,U-Lactin,1260,0.1,0.0,False
+memory,Vaadi,1260,0.1,0.0,False
+memory,QV,1260,0.1,0.0,False
+memory,First Aid Beauty,1260,0.1,0.0,False
+memory,Weleda,1260,0.1,0.0,False
+memory,Bepanthen,1260,0.1,0.0,False
+memory,Boroline,1260,0.1,0.0,False
+memory,Thayers,1260,0.1,0.0,False
+memory,Set Wet,1260,0.1,0.0,False
+memory,Lottery Herbals,1260,0.1,0.0,False
+memory,Morr,1260,0.1,0.0,False
+memory,Cantu Beauty,1260,0.1,0.0,False
+memory,Hair Max,1260,0.1,0.0,False
+memory,Ketoconazole,1260,0.1,0.0,False
+memory,Philip Kingsley,1260,0.1,0.0,False
+memory,Batiste,1260,0.1,0.0,False
+memory,HairMax,1260,0.1,0.0,False
+memory,iRestore,1260,0.1,0.0,False
+memory,Dr. DHT,1260,0.1,0.0,False
+memory,Kapiva,1260,0.1,0.1,False
+memory,StBotanica,1260,0.1,0.0,False
+memory,Brahmi Ayurveda,1260,0.1,0.0,False
+memory,Aveda,1260,0.1,0.0,False
+memory,Briar,1260,0.1,0.0,False
+memory,Fanola,1260,0.1,0.0,False
+memory,VASTU,1260,0.1,0.0,False
+memory,Sunsilk,1260,0.1,0.0,True
+memory,Abbott,1260,0.1,0.0,False
+memory,Glenmark,1260,0.1,0.0,False
+memory,Zoconaz,1260,0.1,0.0,False
+memory,Vedix,1260,0.1,0.0,False
+memory,Exizinc,1260,0.1,0.0,False
+memory,Clinsol,1260,0.1,0.0,False
+memory,Fungisome,1260,0.1,0.0,False
+memory,Sebowash,1260,0.1,0.0,False
+memory,Sonalus Pharma,1260,0.1,0.0,False
+memory,Juicy Chemistry,1260,0.1,0.0,True
+memory,Deve Herbes,1260,0.1,0.0,False
+memory,Dermarest,1260,0.1,0.0,False
+memory,Scalp Med,1260,0.1,0.0,False
+memory,8X,1260,0.1,0.0,False
+memory,Amba Aromatherapy,1260,0.1,0.1,False
+memory,Patanjali Ayurvedic,1260,0.1,0.0,False
+memory,Kottakkal Arya Vaidya Sala,1260,0.1,0.0,False
+memory,doTERRA,1260,0.1,0.0,False
+memory,Now Foods,1260,0.1,0.0,False
+memory,Oribe,1260,0.1,0.0,False
+memory,Amla,1260,0.1,0.0,False
+memory,Neelakurinji,1260,0.1,0.0,False
+memory,Babul,1260,0.1,0.0,False
+memory,Aloe Vera,1260,0.1,0.0,False
+memory,Coconut,1260,0.1,0.0,False
+memory,Rosemary,1260,0.1,0.0,False
+memory,Patanjali / Baidyanath,1260,0.1,0.0,False
+memory,Medi Nature,1260,0.1,0.0,False
+memory,Bhringraj oil (generic),1260,0.1,0.0,False
+memory,Kewliya,1260,0.1,0.0,False
+memory,Nature's Tattva,1260,0.1,0.0,False
+memory,Dr. Ortho's,1260,0.1,0.0,False
+memory,Essence,1260,0.1,0.0,False
+memory,Elle 18,1260,0.1,0.0,False
+memory,Nykaa Redraw,1260,0.1,0.0,False
+memory,Wet n Wild,1260,0.1,0.0,False
+memory,Retino A,1260,0.1,0.0,False
+memory,MedPlus,1260,0.1,0.0,False
+memory,Chemist at Play,1260,0.1,0.0,True
+memory,Kojie San,1260,0.1,0.0,False
+memory,Murad,1260,0.1,0.0,False
+memory,SkinMedica,1260,0.1,0.0,False
+memory,Kose,1260,0.1,0.0,False
+memory,Foxtrot Labs,1260,0.1,0.0,False
+memory,Bourjois,1260,0.1,0.0,False
+memory,Good Vibes,1260,0.1,0.0,False
+memory,Colorescience,1260,0.1,0.0,False
+memory,Isdin,1260,0.1,0.0,False
+memory,Isntree,1260,0.1,0.0,False
+memory,Lekka,1260,0.1,0.0,False
+memory,Zitmo,1260,0.1,0.0,False
+memory,Innature,1260,0.1,0.0,False
+memory,Vaseline Intensive Care,1260,0.1,0.0,False
+memory,Moiz,1260,0.1,0.0,False
+memory,Trichoedge,1260,0.1,0.0,False
+memory,Revivogen,1260,0.1,0.0,False
+memory,Burt's Bees,1260,0.1,0.0,False
+memory,Bayer,1260,0.1,0.0,False
+memory,Generic minoxidil,1260,0.1,0.0,False
+memory,Ask,1260,0.1,0.1,False
+memory,Unichem,1260,0.1,0.0,False
+memory,Lotería Organics,1260,0.1,0.0,False
+memory,Morpheme Remedies,1260,0.1,0.1,False
+memory,Vilvah,1260,0.1,0.0,False
+memory,Minoxy1,1260,0.1,0.0,False
+memory,Pilix,1260,0.1,0.0,False
+memory,Hair4u,1260,0.1,0.0,False
+memory,Bold Care,1260,0.1,0.0,False
+memory,HIMS,1260,0.1,0.0,False
+memory,Wella,1260,0.1,0.0,False
+memory,Earth Fare,1260,0.1,0.0,False
+memory,Ethique,1260,0.1,0.0,False
+memory,Sesderma,1260,0.1,0.0,False
+memory,Kerabyte,1260,0.1,0.0,False
+memory,Wella Professionals,1260,0.1,0.0,False
+memory,Keranique,1260,0.1,0.0,False
+memory,Mustela,1260,0.1,0.0,False
+memory,Seboril,1260,0.1,0.0,False
+memory,SoulTree,1260,0.1,0.0,False
+memory,Ketokonazol,1260,0.1,0.0,False
+memory,Keto-DS,1260,0.1,0.0,False
+memory,DermaZinc,1260,0.1,0.0,False
+memory,Ciclopirox,1260,0.1,0.0,False
+memory,Dermicool,1260,0.1,0.0,False
+memory,Clincare,1260,0.1,0.0,False
+memory,NatraCare,1260,0.1,0.0,False
+memory,Rey Naturals,1260,0.1,0.0,False
+memory,Ketokem,1260,0.1,0.0,False
+memory,Dhanvantari,1260,0.1,0.0,False
+memory,Sun,1260,0.1,0.0,False
+memory,Ketoconazole 2% Shampoo (Generic),1260,0.1,0.0,False
+memory,Curl Smith,1260,0.1,0.0,False
+memory,Vedic Naturals,1260,0.1,0.0,False
+memory,Brahmi Amla,1260,0.1,0.0,False
+memory,Bioveda,1260,0.1,0.0,False
+memory,Vedic Vaidya,1260,0.1,0.0,False
+memory,Neelibhringadi,1260,0.1,0.0,False
+memory,Coconut oil,1260,0.1,0.0,False
+memory,Almond oil,1260,0.1,0.0,False
+memory,Mahabhringraj,1260,0.1,0.0,False
+memory,Patraj,1260,0.1,0.0,False
+memory,Nature's Treetop,1260,0.1,0.0,False
+memory,Sundar Organics,1260,0.1,0.0,False
+memory,Kiko Milano,1260,0.1,0.0,False
+memory,Kokum,1260,0.1,0.0,False
+memory,Rare Beauty,1260,0.1,0.0,False
+memory,Milk Makeup,1260,0.1,0.0,False
+memory,YSL,1260,0.1,0.0,False
+memory,Etude House,1260,0.1,0.0,False
+memory,Chambor,1260,0.1,0.0,False
+memory,Renee,1260,0.1,0.0,True
+memory,Nykaa Better Skin,1260,0.1,0.0,False
+memory,NYKAA Fashion,1260,0.1,0.0,False
+memory,MAC Viva Glam,1260,0.1,0.0,False
+memory,NYX Professional Makeup,1260,0.1,0.0,False
+memory,Exazel-N,1260,0.1,0.0,False
+memory,Biolane,1260,0.1,0.0,False
+memory,Skin1004,1260,0.1,0.0,False
+memory,Brush-on Block,1260,0.1,0.0,False
+memory,Colorscience,1260,0.1,0.0,False
+memory,Aroma Magic,1260,0.1,0.0,False
+memory,Joy,1260,0.1,0.0,False
+memory,generic minoxidil,1260,0.1,0.0,False
+memory,rosemary oil serums,1260,0.1,0.0,False
+memory,caffeine-based serums,1260,0.1,0.0,False
+memory,peptide or growth-factor serums,1260,0.1,0.0,False
+memory,volumizing or fiber products,1260,0.1,0.0,False
+memory,BONTRESS,1260,0.1,0.0,False
+memory,KZ,1260,0.1,0.0,False
+memory,Regrow,1260,0.1,0.0,False
+memory,Be Bodywise,1260,0.1,0.0,True
+memory,Minoxidil by Dr. Reddy's,1260,0.1,0.1,False
+memory,Keto-Z,1260,0.1,0.0,False
+memory,Kera XL,1260,0.1,0.0,False
+memory,Jason,1260,0.1,0.0,False
+memory,Janssen,1260,0.1,0.1,False
+memory,Whitewash,1260,0.1,0.0,False
+memory,Dandrex,1260,0.1,0.0,False
+memory,Babe,1260,0.1,0.0,False
+memory,Maxcare,1260,0.1,0.0,False
+memory,Kera Nut,1260,0.1,0.0,False
+memory,Dior,1260,0.1,0.0,False
+web_exa,Minimalist,80,28.8,21.2,True
+web_exa,Himalaya,80,22.5,6.2,True
+web_exa,Mamaearth,80,18.8,2.5,True
+web_exa,Fixderma,80,13.8,0.0,True
+web_exa,Dermistry,80,12.5,5.0,False
+web_exa,Dot & Key,80,12.5,3.8,True
+web_exa,WishCare,80,12.5,5.0,False
+web_exa,L'Oreal Paris,80,12.5,10.0,True
+web_exa,The Derma Co,80,11.2,1.2,True
+web_exa,Dove,80,10.0,1.2,True
+web_exa,Bare Anatomy,80,10.0,0.0,True
+web_exa,Re'equil,80,8.8,5.0,True
+web_exa,Dr. Sheth's,80,8.8,5.0,True
+web_exa,Faces Canada,80,8.8,0.0,True
+web_exa,Kaya,80,7.5,0.0,False
+web_exa,Foxtale,80,7.5,1.2,True
+web_exa,CeraVe,80,7.5,2.5,False
+web_exa,Cetaphil,80,7.5,0.0,False
+web_exa,Indulekha,80,7.5,1.2,True
+web_exa,Maybelline,80,7.5,6.2,True
+web_exa,Plix,80,6.2,0.0,True
+web_exa,Chemist at Play,80,5.0,0.0,True
+web_exa,Asaya,80,5.0,0.0,False
+web_exa,Lakmé,80,5.0,1.2,False
+web_exa,Pond's,80,5.0,0.0,True
+web_exa,Be Bodywise,80,5.0,0.0,True
+web_exa,Gabit,80,5.0,0.0,False
+web_exa,Simple,80,5.0,0.0,False
+web_exa,Plum,80,5.0,1.2,True
+web_exa,Parachute,80,5.0,0.0,True
+web_exa,Pilgrim,80,5.0,0.0,True
+web_exa,Naturali,80,5.0,0.0,False
+web_exa,SESA,80,5.0,0.0,False
+web_exa,Nivea,80,3.8,2.5,True
+web_exa,Jovees,80,3.8,0.0,False
+web_exa,Biotique,80,3.8,0.0,True
+web_exa,Alite,80,3.8,0.0,False
+web_exa,Scalpe Pro,80,3.8,0.0,False
+web_exa,TRESemme,80,3.8,0.0,True
+web_exa,Kriam Pharma,80,3.8,2.5,False
+web_exa,Tugain Essentials,80,3.8,1.2,False
+web_exa,Tugain,80,3.8,3.8,False
+web_exa,Sesa,80,3.8,0.0,False
+web_exa,WOW Skin Science,80,3.8,1.2,True
+web_exa,Baidyanath,80,3.8,0.0,False
+web_exa,Renee,80,3.8,0.0,True
+web_exa,Swiss Beauty,80,3.8,0.0,True
+web_exa,Alyoor,80,2.5,0.0,False
+web_exa,The True Therapy,80,2.5,1.2,False
+web_exa,Abivo,80,2.5,0.0,False
+web_exa,Essentive,80,2.5,0.0,False
+web_exa,Deconstruct,80,2.5,0.0,True
+web_exa,SunScoop,80,2.5,0.0,False
+web_exa,Dermatouch,80,2.5,1.2,False
+web_exa,Venusia,80,2.5,1.2,False
+web_exa,Auravedic,80,2.5,1.2,False
+web_exa,Scalpe,80,2.5,1.2,False
+web_exa,CITTA,80,2.5,0.0,False
+web_exa,Love Beauty & Planet,80,2.5,0.0,False
+web_exa,Danfree,80,2.5,0.0,False
+web_exa,Atiket,80,2.5,0.0,False
+web_exa,Triatop,80,2.5,0.0,False
+web_exa,Brillare,80,2.5,0.0,False
+web_exa,Kapiva,80,2.5,0.0,False
+web_exa,Selsun,80,2.5,0.0,False
+web_exa,Bajaj Almond Drops,80,2.5,0.0,True
+web_exa,KAZIMA,80,1.2,0.0,False
+web_exa,The Element,80,1.2,0.0,False
+web_exa,Bioever,80,1.2,0.0,False
+web_exa,the element,80,1.2,0.0,False
+web_exa,ASAYA,80,1.2,1.2,False
+web_exa,BrownBoi,80,1.2,0.0,False
+web_exa,Proskire,80,1.2,0.0,False
+web_exa,Jovees Herbal,80,1.2,0.0,False
+web_exa,Nykaa Naturals,80,1.2,0.0,False
+web_exa,A+,80,1.2,0.0,False
+web_exa,Clean & Clear,80,1.2,0.0,False
+web_exa,Lakme,80,1.2,0.0,True
+web_exa,Hyphen,80,1.2,0.0,True
+web_exa,Dermasys,80,1.2,0.0,False
+web_exa,Dr. Reddy's,80,1.2,0.0,False
+web_exa,Dr. Reddy's Venusia,80,1.2,0.0,False
+web_exa,Novology,80,1.2,0.0,False
+web_exa,Dusky Monk,80,1.2,0.0,False
+web_exa,Pantene,80,1.2,0.0,True
+web_exa,Ketodac,80,1.2,0.0,False
+web_exa,Cleardruff,80,1.2,0.0,False
+web_exa,Head & Shoulders,80,1.2,0.0,True
+web_exa,Indē Wild,80,1.2,0.0,False
+web_exa,Indus Valley,80,1.2,0.0,False
+web_exa,Magical Jar,80,1.2,1.2,False
+web_exa,Sushain,80,1.2,0.0,False
+web_exa,Alps Goodness,80,1.2,0.0,False
+web_exa,Sesa Ayurvedic,80,1.2,0.0,False
+web_exa,Good Vibes,80,1.2,0.0,False
+web_exa,Patanjali,80,1.2,0.0,False
+web_exa,Fae Beauty,80,1.2,0.0,False
+web_exa,Just Herbs,80,1.2,0.0,False
+web_exa,PAC,80,1.2,0.0,False
+web_native,Minimalist,20,40.0,35.0,True
+web_native,The Derma Co,20,25.0,5.0,True
+web_native,WishCare,20,25.0,10.0,False
+web_native,Deconstruct,20,20.0,5.0,True
+web_native,Plum,20,15.0,0.0,True
+web_native,Himalaya,20,10.0,5.0,True
+web_native,Cetaphil,20,10.0,10.0,False
+web_native,Simple,20,10.0,0.0,False
+web_native,Pilgrim,20,10.0,0.0,True
+web_native,Bare Anatomy,20,10.0,0.0,True
+web_native,Lakmé,20,10.0,5.0,False
+web_native,Maybelline,20,10.0,5.0,True
+web_native,Garnier,20,5.0,0.0,True
+web_native,The Ordinary,20,5.0,0.0,False
+web_native,Hyphen,20,5.0,0.0,True
+web_native,Dot & Key,20,5.0,0.0,True
+web_native,Fixderma,20,5.0,0.0,True
+web_native,Re'equil,20,5.0,0.0,True
+web_native,Bioderma,20,5.0,0.0,False
+web_native,Bblunt,20,5.0,0.0,True
+web_native,L'Oreal Paris,20,5.0,0.0,True
+web_native,Scalpe Plus,20,5.0,5.0,False
+web_native,New Ketokem,20,5.0,5.0,False
+web_native,Baidyanath,20,5.0,5.0,False
+web_native,Wet n Wild,20,5.0,0.0,False
+web_native,Swiss Beauty,20,5.0,0.0,True
+web_native,Indulekha,20,5.0,5.0,True
+web_native,Kesh King,20,5.0,0.0,True
+web_native,Soulflower,20,5.0,0.0,False
+web_native,Biotique,20,5.0,0.0,True

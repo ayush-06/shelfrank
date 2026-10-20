@@ -1,0 +1,10 @@
+﻿model,specific_recs,matched_pct,price_checked,price_ok_pct,strength_checked,strength_ok_pct,budget_checked,within_budget_pct
+claude-haiku-5.5,435,74.5,148,62.8,82,97.6,185,87.6
+claude-sonnet-5.5,182,85.7,73,54.8,52,96.2,67,86.6
+deepseek-v4-flash,480,72.5,158,65.2,109,87.2,130,90.0
+gemini-3.1-flash-lite,590,86.9,205,64.9,160,96.2,229,90.4
+gemini-3.6-flash,254,87.8,152,67.1,82,95.1,137,93.4
+gpt-6-luna,131,84.7,75,74.7,40,100.0,90,96.7
+gpt-6-sol,31,93.5,16,81.2,14,100.0,19,100.0
+llama-4-maverick,411,55.7,117,49.6,20,65.0,108,86.1
+nova-2-lite-v1,343,52.8,151,57.0,33,72.7,69,89.9
