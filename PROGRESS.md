@@ -1,6 +1,6 @@
 # ShelfRank: progress log
 
-*Read this first when resuming after a context reset. Last updated: 2026-10-21 (full Part 1 run started).*
+*Read this first when resuming after a context reset. Last updated: 2026-10-21 (Part 1 complete).*
 The full narrative, decisions and research live in the Obsidian note `C:\Users\as09a\Obsidian\Obsidian Vault\Exploring Evals.md`.
 
 ## What this is
@@ -27,9 +27,9 @@ A private study of **how the AI models behind shopping assistants recommend Indi
 | 2. Clean | ✅ `src/clean.py` → `data/clean/products.csv`: **2,127 shelf-eligible products, 57 brands, Pilgrim 60** (incl. 7 hand-entered Kay Beauty lipsticks, 2026-10-21). Review exports go to `C:\Users\as09a\Desktop\ShelfRank - cleaned data\` via `src/export_review.py` |
 | Part 1 questions | ✅ Approved: `data/part1/questions.csv`, 60 questions (10 needs × 3 styles × English/Hinglish), plain language, no brands or ingredients |
 | Part 1 pilot | ✅ 2026-10-20: 102 answers, $0.31. Pilgrim named in 3/102. Minimalist dominates. GPT-6 names 0–1 products. Web mode surfaces more D2C brands |
-| Part 1 full run | 🔄 **Started 2026-10-21** (user approved). Run files `logs/part1/full_memory.jsonl` and `logs/part1/full_web.jsonl`. Caps: memory $2.30 total, web $1.50 total (spent so far before the run: pilot $0.31 + cost test $0.12) |
+| Part 1 full run | ✅ Done 2026-10-21: 1,360 answers, $3.28. Run files `logs/part1/full_memory.jsonl` and `logs/part1/full_web.jsonl`. Caps: memory $2.30 total, web $1.50 total (spent so far before the run: pilot $0.31 + cost test $0.12) |
 | Web-mode bias handling | ✅ Decided 2026-10-21: Exa with **10 pages** (same $0.0075 as 5); log every page; split "was the brand FOUND in the results" vs "was it PICKED when found"; small check with each provider's own search (`--engine native`, $0.017–0.032 per answer = 3–4× Exa) on 10 English need+budget questions × GPT-6 Luna and Gemini 3.6 Flash; state "Exa top-10, date" as a limitation |
-| Part 1 scoring | ⏳ To build: extract products from answers → match to catalogue → visibility, rank, fact-check, stability |
+| Part 1 scoring | ✅ 2026-10-21: `src/part1_extract.py` (Haiku extraction, $0.49) → `src/part1_score.py` (rapidfuzz matching within product type, price ±20% of any size's price or MRP). **Report: `results/part1/summary.md`** (copy on Desktop: `ShelfRank - Part 1 results`). Headline: Pilgrim named in 2.1% memory / 5% web-Exa / 10% own-search; Minimalist about 28%; Pilgrim known for its Redensyl hair serum; 0% in 7 of 10 needs |
 | Part 2 | ⏳ Not started (shelf builder, trials, needs a credit top-up) |
 | Dashboard and write-up | ⏳ Not started |
 
@@ -66,11 +66,11 @@ GPT-6 Luna, GPT-6 Sol, Gemini 3.1 Flash-Lite, Gemini 3.6 Flash, Claude Haiku 5.5
 1. ~~User go → full Part 1 run.~~ **Running** (see Status). If interrupted, re-run the same commands; the runner resumes.
    - memory: all 60 questions × 3 repeats on 6 cheap models, plus × 1 on Sol, Sonnet and Gemini 3.6 Flash
    - web: 20 "need + budget" questions × 4 models
-2. Build Part 1 scoring:
+2. ~~Build Part 1 scoring~~ ✅ done:
    - LLM extraction to JSON (brand, product, claimed price, claimed %)
    - fuzzy-match to `data/clean/products.csv`
    - metrics: share, rank, Pilgrim visibility, hallucination/price/% errors, fit-to-request, stability, EN vs Hinglish, memory vs web
-3. Report the Part 1 findings to the user (tables), and add them to Obsidian.
+3. ✅ Part 1 findings reported (summary.md + Obsidian). **Next: user review of the Part 1 findings, then Part 2.** Total spend so far is about $4.20 of the $5 (+ $10 top-up requested; check the balance before Part 2).
 4. Part 2 design: shelf builder (Pilgrim + top-recommended from Part 1 + peers + legacy + 1–2 "wrong" products), standard cards, trials, pilot. Needs a credit top-up.
 5. Later: Kay Beauty and the ratings pass once Shopify stops throttling (test one request first).
 6. Undo list at the end (see the Obsidian note): uninstall gh, log out both gh accounts if wanted, repo-local git config, delete the repo if wanted.
