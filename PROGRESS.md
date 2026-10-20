@@ -24,12 +24,12 @@ A private study of **how the AI models behind shopping assistants recommend Indi
 |---|---|
 | 1. Collect catalogues | ✅ 41 Shopify brands, 10,556 raw products (`data/raw/2026-10-17/shopify/`); 7 brands via product pages, 1,626 (`.../pages/`); 85 hand-entered rows (`data/manual/legacy_brands.csv`); L'Oréal Paris and Nivea MRPs (`data/manual/price_additions.csv`) |
 | 1b. Pending data | Shopify still 429 on product pages (checked 2026-10-21, 3 days running). **Decided 2026-10-21:** Kay Beauty lipsticks hand-entered ✅ (9 rows; 7 shelf-eligible; mini sets excluded); **Part 2 uses CONTROLLED ratings** (we set the stars: equal / boost one / lower one / review-count only, rotated across products), so real ratings are optional. Retry Shopify about 2026-10-28 with one request; never get around the block |
-| 2. Clean | ✅ `src/clean.py` → `data/clean/products.csv`: **2,127 shelf-eligible products, 57 brands, Pilgrim 60** (incl. 7 hand-entered Kay Beauty lipsticks, 2026-10-21). Review exports go to `C:\Users\as09a\Desktop\ShelfRank - cleaned data\` via `src/export_review.py` |
+| 2. Clean | ✅ `src/clean.py` → `data/clean/products.csv`: **2,127 shelf-eligible products, 57 brands, Pilgrim 60** (incl. 7 hand-entered Kay Beauty lipsticks, 2026-10-21). Review exports are in **`results/review/`** (via `src/export_review.py`; the 34 MB `data/clean/products.csv` is gitignored and rebuilt by `src/clean.py`) |
 | Part 1 questions | ✅ Approved: `data/part1/questions.csv`, 60 questions (10 needs × 3 styles × English/Hinglish), plain language, no brands or ingredients |
 | Part 1 pilot | ✅ 2026-10-20: 102 answers, $0.31. Pilgrim named in 3/102. Minimalist dominates. GPT-6 names 0–1 products. Web mode surfaces more D2C brands |
 | Part 1 full run | ✅ Done 2026-10-21: 1,360 answers, $3.28. Run files `logs/part1/full_memory.jsonl` and `logs/part1/full_web.jsonl`. Caps: memory $2.30 total, web $1.50 total (spent so far before the run: pilot $0.31 + cost test $0.12) |
 | Web-mode bias handling | ✅ Decided 2026-10-21: Exa with **10 pages** (same $0.0075 as 5); log every page; split "was the brand FOUND in the results" vs "was it PICKED when found"; small check with each provider's own search (`--engine native`, $0.017–0.032 per answer = 3–4× Exa) on 10 English need+budget questions × GPT-6 Luna and Gemini 3.6 Flash; state "Exa top-10, date" as a limitation |
-| Part 1 scoring | ✅ 2026-10-21: `src/part1_extract.py` (Haiku extraction, $0.49) → `src/part1_score.py` (rapidfuzz matching within product type, price ±20% of any size's price or MRP). **Report: `results/part1/summary.md`** (copy on Desktop: `ShelfRank - Part 1 results`). Headline: Pilgrim named in 2.1% memory / 5% web-Exa / 10% own-search; Minimalist about 28%; Pilgrim known for its Redensyl hair serum; 0% in 7 of 10 needs |
+| Part 1 scoring | ✅ 2026-10-21: `src/part1_extract.py` (Haiku extraction, $0.49) → `src/part1_score.py` (rapidfuzz matching within product type, price ±20% of any size's price or MRP). **Report: `results/part1/summary.md`**, with all CSVs in `results/part1/`. Headline: Pilgrim named in 2.1% memory / 5% web-Exa / 10% own-search; Minimalist about 28%; Pilgrim known for its Redensyl hair serum; 0% in 7 of 10 needs |
 | Part 2 | ⏳ Not started (shelf builder, trials, needs a credit top-up) |
 | Dashboard and write-up | ⏳ Not started |
 
@@ -42,6 +42,8 @@ A private study of **how the AI models behind shopping assistants recommend Indi
 - Hidden: only exact markers (`hidden-product`, `upsell-product`, `hide__product`…). "no-index" is SEO, not hidden. A product hidden on **every** listing is excluded (shoppers can't find it) **unless it's in Pilgrim's public Bestsellers collection** (`data/raw/2026-10-17/pilgrim_bestsellers_collection.json`; 41/54 bestsellers are in the study).
 - Brands whose store marks every product unavailable (Pond's, TRESemmé) → stock "unknown", not out of stock.
 - Manual exclusions: `data/manual/exclusions.csv`.
+
+**Everything final lives in the repo (`results/`). Nothing is kept on the Desktop (user preference, 2026-10-21).**
 
 ## How to run things
 ```
