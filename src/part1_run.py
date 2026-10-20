@@ -63,8 +63,10 @@ async def ask(client, sem, q, model, mode, repeat, args, state, out):
     body = {"usage": {"include": True}}
     if cfg.get("reasoning"):
         body["reasoning"] = {**cfg["reasoning"], "exclude": True}
-    if mode == "web":
-        body["plugins"] = [{"id": "web", "engine": "exa", "max_results": args.web_results}]
+    if mode.startswith("web"):
+        body["plugins"] = [{"id": "web", "engine": args.engine, "max_results": args.web_results}]
+        if args.engine == "native":  # provider's own search (e.g. OpenAI / Google); smallest context to limit cost
+            body["web_search_options"] = {"search_context_size": "low"}
     async with sem:
         if state["spent"] >= args.budget:
             state["skipped_budget"] += 1
@@ -107,7 +109,8 @@ async def main():
     ap.add_argument("--repeats", type=int, default=1)
     ap.add_argument("--budget", type=float, required=True, help="hard USD cap for this run file")
     ap.add_argument("--max-tokens", type=int, default=2500)
-    ap.add_argument("--web-results", type=int, default=5)
+    ap.add_argument("--web-results", type=int, default=10)
+    ap.add_argument("--engine", choices=["exa", "native"], default="exa", help="web mode: Exa for all models, or each provider's own search")
     ap.add_argument("--concurrency", type=int, default=6)
     args = ap.parse_args()
 
@@ -118,13 +121,14 @@ async def main():
     out_path = ROOT / "logs" / "part1" / f"{args.run}.jsonl"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     done, spent = done_keys(out_path)
+    mode_label = args.mode if args.mode == "memory" else f"web_{args.engine}"
     state = {"spent": spent, "n": 0, "skipped_budget": 0}
     jobs = [(q, m, r) for r in range(1, args.repeats + 1) for q in questions for m in args.models
-            if (args.mode, q["qid"], m, r) not in done]
+            if (mode_label, q["qid"], m, r) not in done]
     print(f"{len(jobs)} calls to make ({len(done)} already done), already spent ${spent:.4f}, budget cap ${args.budget}")
     sem = asyncio.Semaphore(args.concurrency)
     with open(out_path, "a", encoding="utf-8") as out:
-        await asyncio.gather(*(ask(client, sem, q, m, args.mode, r, args, state, out) for q, m, r in jobs))
+        await asyncio.gather(*(ask(client, sem, q, m, mode_label, r, args, state, out) for q, m, r in jobs))
     print(f"finished: {state['n']} calls, total spent in this run file ${state['spent']:.4f}"
           + (f", {state['skipped_budget']} skipped because the budget cap was reached" if state["skipped_budget"] else ""))
 
