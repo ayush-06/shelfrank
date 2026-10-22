@@ -226,6 +226,18 @@ def rows_manual():
                "price": num(m["mrp_inr"]), "mrp": num(m["mrp_inr"]), "in_stock": True, "url": m["source_url"],
                "rating": None, "review_count": None, "size_hint": f"{m['size']} {m['unit']}",
                "confidence": m["confidence"], "raw_hidden": False}
+    # global brands the AIs named most in Part 1 (hand-collected 2026-10-22 from official Indian sites / major retailers)
+    gpath = ROOT / "data" / "manual" / "global_brands.csv"
+    if gpath.exists():
+        g = pd.read_csv(gpath)
+        for i, m in g.iterrows():
+            sp = re.search(r"selling_price\s*=\s*(\d+(?:\.\d+)?)", str(m.get("notes") or ""))
+            yield {"brand": m["brand"], "source": "manual", "product_id": f"global-{i}", "variant_id": f"global-{i}",
+                   "title": text(m["product_name"]), "variant": "", "type_tags": str(m["product_type"]),
+                   "description": text(f"{m['short_description']} Key ingredients: {m['key_ingredients']}. Claims: {m['claims']}. Concerns: {m['concerns']}."),
+                   "price": num(sp.group(1)) if sp else num(m["mrp_inr"]), "mrp": num(m["mrp_inr"]), "in_stock": True,
+                   "url": m["source_url"], "rating": None, "review_count": None, "size_hint": f"{m['size']} {m['unit']}",
+                   "confidence": m["confidence"], "raw_hidden": False}
 
 
 def main():
