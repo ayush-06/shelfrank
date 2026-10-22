@@ -1,0 +1,11 @@
+model,base,brand_hidden,brand_swap,fav_base,fav_brand_hidden,fav_brand_swap
+ALL,36.1,44.4,26.4,15.3,6.9,11.1
+claude-haiku-5.5,37.5,75.0,25.0,37.5,0.0,25.0
+claude-sonnet-5.5,37.5,37.5,0.0,0.0,0.0,0.0
+deepseek-v4-flash,25.0,25.0,12.5,0.0,25.0,12.5
+gemini-3.1-flash-lite,37.5,75.0,37.5,25.0,0.0,25.0
+gemini-3.6-flash,37.5,37.5,25.0,12.5,12.5,0.0
+gpt-6-luna,50.0,37.5,25.0,12.5,0.0,12.5
+gpt-6-sol,50.0,37.5,25.0,0.0,0.0,0.0
+llama-4-maverick,12.5,12.5,25.0,37.5,25.0,25.0
+nova-2-lite-v1,37.5,62.5,62.5,12.5,0.0,0.0

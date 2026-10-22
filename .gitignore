@@ -3,9 +3,11 @@
 .env.*
 !.env.example
 
-# raw scraped catalogues and model logs stay local
+# raw scraped catalogues stay local (brands' catalogues are not ours to republish)
 data/raw/
-logs/
+
+# model logs ARE committed (raw responses, user request 2026-10-22); console output is not
+logs/**/*_console.log
 
 # python
 .venv/

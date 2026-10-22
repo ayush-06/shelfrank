@@ -1,0 +1,22 @@
+model,badge,lift_pts,same_as_price_cut_pct,approx_inr
+ALL,Bestseller,11.1,,
+ALL,Dermatologist recommended,-5.6,-20.0,-87.0
+ALL,Sponsored,-9.7,-10.0,-44.0
+claude-haiku-5.5,Bestseller,31.2,,
+claude-haiku-5.5,Dermatologist recommended,31.2,,
+claude-haiku-5.5,Sponsored,-18.8,-10.0,-44.0
+deepseek-v4-flash,Bestseller,-12.5,-20.0,-87.0
+deepseek-v4-flash,Dermatologist recommended,-12.5,-20.0,-87.0
+deepseek-v4-flash,Sponsored,-12.5,-20.0,-87.0
+gemini-3.1-flash-lite,Bestseller,31.2,-10.0,-44.0
+gemini-3.1-flash-lite,Dermatologist recommended,6.2,-15.0,-66.0
+gemini-3.1-flash-lite,Sponsored,6.2,-15.0,-66.0
+gpt-6-luna,Bestseller,0.0,10.0,44.0
+gpt-6-luna,Dermatologist recommended,-25.0,-20.0,-87.0
+gpt-6-luna,Sponsored,-25.0,-20.0,-87.0
+llama-4-maverick,Bestseller,18.8,-20.0,-87.0
+llama-4-maverick,Dermatologist recommended,-6.2,-10.0,-44.0
+llama-4-maverick,Sponsored,-6.2,-10.0,-44.0
+nova-2-lite-v1,Bestseller,6.2,-20.0,-87.0
+nova-2-lite-v1,Dermatologist recommended,-18.8,-10.0,-44.0
+nova-2-lite-v1,Sponsored,6.2,-20.0,-87.0
