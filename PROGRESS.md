@@ -17,7 +17,7 @@ A private study of **how the AI models behind shopping assistants recommend Indi
 - **Git push needs the GitHub CLI account `ayush-06` active.** Check with `gh auth status`. The user also has the work account `ayushsharma-pilgrim` in gh and in Git Credential Manager (for the Pilgrim repos).
 - Public data only. Polite, slow requests; never get around a block; never place orders.
 - **Shopify is throttling our IP** (429s since 2026-10-18; still 429 on 2026-10-19). Don't hammer it. Kay Beauty and the ratings pass wait.
-- Budget: user's OpenRouter credit is **$5** (spent $0.43 before the full run). Every run uses `--budget` caps. **Top-ups take time to show up**, so plan spend ahead and ask for a top-up early (Part 2 will need one).
+- Budget: OpenRouter credit is **$15 in total, and that was the LAST top-up** (user, 2026-10-22). Spent $4.20 by the end of Part 1, so **$10.80 is left**. Every run uses `--budget` caps. Check the balance before each stage with `.venv/Scripts/python src/key_status.py`, which prints status only, never the key. **Never touch the last $1.90.**
 
 ## Status
 | Phase | Status |
@@ -30,7 +30,7 @@ A private study of **how the AI models behind shopping assistants recommend Indi
 | Part 1 full run | ✅ Done 2026-10-21: 1,360 answers, $3.28. Run files `logs/part1/full_memory.jsonl` and `logs/part1/full_web.jsonl`. Caps: memory $2.30 total, web $1.50 total (spent so far before the run: pilot $0.31 + cost test $0.12) |
 | Web-mode bias handling | ✅ Decided 2026-10-21: Exa with **10 pages** (same $0.0075 as 5); log every page; split "was the brand FOUND in the results" vs "was it PICKED when found"; small check with each provider's own search (`--engine native`, $0.017–0.032 per answer = 3–4× Exa) on 10 English need+budget questions × GPT-6 Luna and Gemini 3.6 Flash; state "Exa top-10, date" as a limitation |
 | Part 1 scoring | ✅ 2026-10-21: `src/part1_extract.py` (Haiku extraction, $0.49) → `src/part1_score.py` (rapidfuzz matching within product type, price ±20% of any size's price or MRP). **Report: `results/part1/summary.md`**, with all CSVs in `results/part1/`. Headline: Pilgrim named in 2.1% memory / 5% web-Exa / 10% own-search; Minimalist about 28%; Pilgrim known for its Redensyl hair serum; 0% in 7 of 10 needs |
-| Part 2 | ⏳ Not started (shelf builder, trials, needs a credit top-up) |
+| Part 2 | ⏳ Plan laid out 2026-10-22 (see "Part 2 plan and budget" below). Waiting on the user's go, then the shelves are built for review |
 | Dashboard and write-up | ⏳ Not started |
 
 ## Key decisions (A–J and later)
@@ -63,6 +63,21 @@ GPT-6 Luna, GPT-6 Sol, Gemini 3.1 Flash-Lite, Gemini 3.6 Flash, Claude Haiku 5.5
 
 ## Part 2 design notes (decided with the user)
 - **Controlled ratings with a gap ladder** (user idea 2026-10-21): base 4.2★ for all; boost one product to 4.4 / 4.6 / 4.8 / 5.0★ (+0.2/+0.4/+0.6/+0.8) and lower to 4.0 / 3.8 / 3.4★; also review-count-only (4.2★ with 50 vs 5,000 reviews). Rotate the boosted product across all 8 (incl. Pilgrim). Run the full ladder in the Part 2 PILOT on cheap models; the full run keeps the 2–3 gaps that matter. Watch for a 'too good to be true' tipping point at 4.8–5.0★.
+
+## Part 2 plan and budget (laid out 2026-10-22, $10.80 left)
+| Stage | What | Cap |
+|---|---|---|
+| A. Build (free) | Shelf builder: 10 shelves, one per Part 1 need, 8 products from 8 brands. 1 Pilgrim, about 3 Part 1 favourites, 2 D2C peers, 1 legacy, 1 deliberately wrong fit. Standard cards. Trial generator, runner (reuses the Part 1 async runner and budget cap), scorer | $0 |
+| B. User review (free) | 10 shelves plus sample cards | $0 |
+| C. Pilot | 1–2 shelves × all 9 models × every trial type, small. Measures real cost per call, parse rate and sanity checks | $0.40 |
+| D. Main grid | 6 cheap models × 10 shelves × all trials (shuffle and repeats, rating ladder, badges, price, brand hidden or swapped, Hinglish). Sized after the pilot | $4.50 |
+| E. Premium check | Sol, Sonnet, Gemini 3.6 on a subset (baseline, key rating gaps, brand hidden) | $2.00 |
+| F. Pilgrim card test | Variants of Pilgrim's own card (strength % shown, clinical claim, plainer copy). What lifts Pilgrim's pick rate? | $1.00 |
+| Re-runs and fixes | | $1.00 |
+| **Never touched** | | **$1.90** |
+| G. Analysis and wrap-up (free) | Pick share, position curve, lift with 95% intervals, "badge worth ₹X", wrong-pick rate, consistency, per model. Part 1 + 2 write-up, local HTML dashboard in the repo (not published) | $0 |
+
+The AI sees the shopper request plus 8 cards and returns JSON (pick one, plus a one-line reason). That makes it cheap: no extraction step, and scoring is deterministic.
 
 ## Next steps
 1. ~~User go → full Part 1 run.~~ **Running** (see Status). If interrupted, re-run the same commands; the runner resumes.
