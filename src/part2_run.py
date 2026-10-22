@@ -102,13 +102,13 @@ class Pacer:
         await asyncio.sleep(delay)
 
 
-def done_keys(path):
+def done_keys(path, retry_unparsed=False):
     keys, spent = set(), 0.0
     if path.exists():
         for line in path.read_text(encoding="utf-8").splitlines():
             r = json.loads(line)
             spent += r.get("cost_usd") or 0
-            if r.get("raw") is not None:
+            if r.get("raw") is not None and not (retry_unparsed and r.get("pick_slot") is None):
                 keys.add((r["trial_id"], r["model"]))
     return keys, spent
 
@@ -170,6 +170,7 @@ async def main():
     ap.add_argument("--rpm", type=float, default=18, help="max requests per minute per model")
     ap.add_argument("--show", help="print one rendered prompt for this shelf and exit")
     ap.add_argument("--dry", action="store_true", help="count calls only")
+    ap.add_argument("--retry-unparsed", action="store_true", help="ask again where the answer could not be parsed (e.g. cut off)")
     args = ap.parse_args()
 
     cards = load_cards()
@@ -185,7 +186,7 @@ async def main():
            and (not args.levels or t["level"] is None or str(t["level"]) in args.levels)
            and t["repeat"] <= args.max_repeat]
     out_path = ROOT / "logs" / "part2" / f"{args.run}.jsonl"
-    done, spent = done_keys(out_path) if args.run else (set(), 0.0)
+    done, spent = done_keys(out_path, args.retry_unparsed) if args.run else (set(), 0.0)
     jobs = [(t, m) for t in sel for m in args.models if (t["trial_id"], m) not in done]
     print(f"{len(jobs)} calls to make ({len(done)} already done), spent so far ${spent:.4f}, cap ${args.budget}")
     if args.dry:
