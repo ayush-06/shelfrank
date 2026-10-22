@@ -14,6 +14,7 @@ A private study of **how the AI models behind shopping assistants recommend Indi
 - **Do NOT update Claude's memory from this project.** Only this file and the Obsidian note are the record.
 - **Never read or print API keys.** The OpenRouter key lives in `.env` (gitignored); code reads it, Claude never opens it.
 - **The repo is private** (github.com/ayush-06/shelfrank). **Results are not published** unless the user decides to.
+- **2026-10-22, about 10:15 IST: NO PUSHES until the end (user is switching GitHub accounts).** Commit locally only; the last pushed commit is `eedcf19`. At the end: user switches back to `ayush-06`, then one push.
 - **Git push needs the GitHub CLI account `ayush-06` active.** Check with `gh auth status`. The user also has the work account `ayushsharma-pilgrim` in gh and in Git Credential Manager (for the Pilgrim repos).
 - Public data only. Polite, slow requests; never get around a block; never place orders.
 - **Shopify is throttling our IP** (429s since 2026-10-18; still 429 on 2026-10-19). Don't hammer it. Kay Beauty and the ratings pass wait.
