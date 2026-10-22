@@ -1,0 +1,6 @@
+level,mean,size,ci
+as_is (base),21.9,960,2.6
+clinical,20.8,480,3.6
+derm_tested,17.5,480,3.4
+plain,12.7,480,3.0
+shopper_words,46.0,480,4.5
