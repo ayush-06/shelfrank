@@ -4,6 +4,7 @@ Each trial = one shelf + ONE change + a product order. The AI sees the shopper's
 Conditions:
   base          no ratings, no badges, real prices; 8 rotations (each product once in each slot) x repeats
   hinglish      same as base, question in Hinglish
+  no_budget     same as base, the question's "under ₹X" removed (like Part 1's generic style)
   rating_ctrl   every product shows 4.2★ (1,200 reviews)
   rating        one target shows 4.0/3.8/3.4 or 4.4/4.6/4.8/5.0★, the rest 4.2★ (1,200 reviews)
   reviews       one target shows 4.2★ with 50 or 5,000 reviews, the rest 4.2★ (1,200 reviews)
@@ -21,6 +22,7 @@ Writes data/part2/trials_<set>.jsonl     sets: full | pilot
 import argparse
 import json
 import random
+import re
 from pathlib import Path
 
 import pandas as pd
@@ -44,6 +46,7 @@ def make(shelves, questions, which="full", base_repeats=2, seed=7):
         brand = dict(zip(sh.product_key, sh.brand))
         q = {lang: questions[(questions.qid == f"{sid}-b-{'en' if lang == 'en' else 'hi'}")].question.iloc[0]
              for lang in ("en", "hinglish")}
+        q["no_budget"] = re.sub(r",?\s*under ₹\d+", "", q["en"])  # same question, price limit removed
         pilgrim = next(k for k in keys if role[k] == "pilgrim")
         fav = next(k for k in keys if role[k] == "part1_favourite")  # the most-named favourite (first added)
         targets = keys
@@ -63,6 +66,7 @@ def make(shelves, questions, which="full", base_repeats=2, seed=7):
                 add("base", order=rotation(keys, r), rep=rep)
         for r in rots:
             add("hinglish", order=rotation(keys, r), lang="hinglish")
+            add("no_budget", order=rotation(keys, r), lang="no_budget")
             add("rating_ctrl", order=rotation(keys, r), ratings={k: [4.2, 1200] for k in keys})
             add("brand_hidden", order=rotation(keys, r), hide_brands=True)
             add("brand_swap", order=rotation(keys, r), brand_swap=[pilgrim, fav])

@@ -81,7 +81,7 @@ def main():
     pil.to_csv(OUT / "pilgrim_by_shelf.csv", index=False)
 
     # 2. position bias (whole-shelf conditions, all products rotated through every slot)
-    whole = d[d.condition.isin(["base", "hinglish", "rating_ctrl", "brand_hidden", "brand_swap"])]
+    whole = d[d.condition.isin(["base", "hinglish", "no_budget", "rating_ctrl", "brand_hidden", "brand_swap"])]
     pos = per_model(lambda x: (x[x.condition.isin(whole.condition.unique())].pick_slot
                                .value_counts(normalize=True).sort_index().mul(100).round(1)
                                .rename("pick_pct").rename_axis("slot").reset_index()))
@@ -145,7 +145,7 @@ def main():
     # 5. wrong picks and budget breaks (base and hinglish)
     def wrong(x):
         out = []
-        for c in ["base", "hinglish"]:
+        for c in ["base", "hinglish", "no_budget"]:
             y = x[x.condition == c]
             if len(y):
                 over = y.apply(lambda r: price.get(r.pick_key, 0) > budget[r.shelf], axis=1).mean()

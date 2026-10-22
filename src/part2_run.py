@@ -87,6 +87,19 @@ def parse_pick(text, n):
     return None, None
 
 
+class Pacer:
+    """New OpenRouter accounts get 20 requests/minute per model: keep each model under that."""
+    def __init__(self, per_minute):
+        self.gap, self.next, self.lock = 60.0 / per_minute, 0.0, asyncio.Lock()
+
+    async def wait(self):
+        async with self.lock:
+            now = time.monotonic()
+            delay = max(0.0, self.next - now)
+            self.next = max(now, self.next) + self.gap
+        await asyncio.sleep(delay)
+
+
 def done_keys(path):
     keys, spent = set(), 0.0
     if path.exists():
@@ -98,7 +111,7 @@ def done_keys(path):
     return keys, spent
 
 
-async def ask(client, sem, trial, model, cards, args, state, out):
+async def ask(client, sem, pacer, trial, model, cards, args, state, out):
     cfg = MODELS.get(model, {})
     body = {"usage": {"include": True}}
     if cfg.get("reasoning"):
@@ -112,7 +125,8 @@ async def ask(client, sem, trial, model, cards, args, state, out):
                                      "target_role", "language", "repeat", "order")}
         rec.update({"model": model, "asked_at": datetime.now(IST).isoformat(timespec="seconds")})
         t0 = time.time()
-        for attempt in range(3):
+        for attempt in range(4):
+            await pacer.wait()
             try:
                 resp = await client.chat.completions.create(
                     model=model, max_tokens=args.max_tokens, extra_body=body,
@@ -127,7 +141,7 @@ async def ask(client, sem, trial, model, cards, args, state, out):
                 break
             except Exception as e:
                 rec.update({"raw": None, "error": f"{type(e).__name__}: {str(e)[:300]}", "cost_usd": 0})
-                await asyncio.sleep(5 * (attempt + 1))
+                await asyncio.sleep(60 if "429" in str(e) else 5 * (attempt + 1))
         state["spent"] += rec.get("cost_usd") or 0
         state["n"] += 1
         state["unparsed"] += int(rec.get("raw") is not None and rec.get("pick_slot") is None)
@@ -150,7 +164,8 @@ async def main():
     ap.add_argument("--max-repeat", type=int, default=99)
     ap.add_argument("--budget", type=float)
     ap.add_argument("--max-tokens", type=int, default=300)
-    ap.add_argument("--concurrency", type=int, default=8)
+    ap.add_argument("--concurrency", type=int, default=60)
+    ap.add_argument("--rpm", type=float, default=18, help="max requests per minute per model")
     ap.add_argument("--show", help="print one rendered prompt for this shelf and exit")
     ap.add_argument("--dry", action="store_true", help="count calls only")
     args = ap.parse_args()
@@ -179,8 +194,9 @@ async def main():
     out_path.parent.mkdir(parents=True, exist_ok=True)
     state = {"spent": spent, "n": 0, "skipped": 0, "unparsed": 0}
     sem = asyncio.Semaphore(args.concurrency)
+    pacers = {m: Pacer(args.rpm) for m in args.models}
     with open(out_path, "a", encoding="utf-8") as out:
-        await asyncio.gather(*(ask(client, sem, t, m, cards, args, state, out) for t, m in jobs))
+        await asyncio.gather(*(ask(client, sem, pacers[m], t, m, cards, args, state, out) for t, m in jobs))
     print(f"finished: {state['n']} calls, {state['unparsed']} unparsed, run total ${state['spent']:.4f}"
           + (f", {state['skipped']} skipped (budget cap)" if state["skipped"] else ""))
 
