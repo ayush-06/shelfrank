@@ -1,0 +1,9 @@
+model,condition,n,wrong_product_pct,over_budget_pct,pilgrim_pct
+ALL,base,240,0.0,0.0,20.4
+ALL,no_budget,240,7.1,7.1,16.2
+claude-sonnet-5.5,base,80,0.0,0.0,18.8
+claude-sonnet-5.5,no_budget,80,12.5,12.5,11.2
+gemini-3.6-flash,base,80,0.0,0.0,15.0
+gemini-3.6-flash,no_budget,80,6.2,6.2,15.0
+gpt-6-sol,base,80,0.0,0.0,27.5
+gpt-6-sol,no_budget,80,2.5,2.5,22.5

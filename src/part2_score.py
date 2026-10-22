@@ -45,7 +45,10 @@ def ci(p1, n1, p0, n0):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("runs", nargs="+")
+    ap.add_argument("--out", default="", help="subfolder of results/part2/ to write to")
     args = ap.parse_args()
+    global OUT
+    OUT = OUT / args.out if args.out else OUT
     OUT.mkdir(parents=True, exist_ok=True)
     d = load(args.runs)
     sh = pd.read_csv(ROOT / "data" / "part2" / "shelves.csv")

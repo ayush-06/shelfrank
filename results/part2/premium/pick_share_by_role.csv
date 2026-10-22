@@ -1,0 +1,17 @@
+model,role,pick_pct
+ALL,d2c_peer,37.5
+ALL,part1_favourite,31.7
+ALL,pilgrim,20.4
+ALL,legacy,10.4
+claude-sonnet-5.5,d2c_peer,45.0
+claude-sonnet-5.5,part1_favourite,28.7
+claude-sonnet-5.5,pilgrim,18.8
+claude-sonnet-5.5,legacy,7.5
+gemini-3.6-flash,d2c_peer,41.2
+gemini-3.6-flash,part1_favourite,33.8
+gemini-3.6-flash,pilgrim,15.0
+gemini-3.6-flash,legacy,10.0
+gpt-6-sol,part1_favourite,32.5
+gpt-6-sol,pilgrim,27.5
+gpt-6-sol,d2c_peer,26.2
+gpt-6-sol,legacy,13.8

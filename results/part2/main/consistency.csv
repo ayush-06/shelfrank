@@ -1,0 +1,7 @@
+model,same_answer_pct
+claude-haiku-5.5,81.2
+deepseek-v4-flash,52.5
+gemini-3.1-flash-lite,93.8
+gpt-6-luna,90.0
+llama-4-maverick,97.5
+nova-2-lite-v1,82.5

@@ -1,0 +1,5 @@
+model,condition,level,n,target_pick_pct,reference_pct,lift_pts,ci95_pts
+ALL,rating,0.4,240,35.8,12.5,23.3,7.4
+claude-sonnet-5.5,rating,0.4,80,42.5,12.5,30.0,13.0
+gemini-3.6-flash,rating,0.4,80,32.5,12.5,20.0,12.6
+gpt-6-sol,rating,0.4,80,32.5,12.5,20.0,12.6
