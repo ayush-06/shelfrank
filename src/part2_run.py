@@ -44,6 +44,8 @@ def render(trial, cards):
     lines = []
     for i, k in enumerate(trial["order"], 1):
         c = cards[k]
+        if k in (m.get("card_override") or {}):  # Pilgrim card test: hypothetical copy changes
+            c = c._replace(**m["card_override"][k])
         brand = c.brand
         if swap and k in swap:
             brand = cards[swap[1] if k == swap[0] else swap[0]].brand

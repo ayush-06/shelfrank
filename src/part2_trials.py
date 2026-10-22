@@ -83,16 +83,50 @@ def make(shelves, questions, which="full", base_repeats=2, seed=7):
     return trials
 
 
+def make_card_test(shelves, questions, cards):
+    """Pilgrim card test: only Pilgrim's card changes (hypothetical copy, not Pilgrim's real claims).
+    plain          no claims, no texture line
+    shopper_words  'Good for' leads with the shopper's own words from the question
+    derm_tested    second claim replaced by 'Dermatologically tested'
+    clinical       second claim replaced by 'Clinically tested: visible results in 4 weeks'
+    Compared against the base condition of the main run (same shelves, same 8 rotations)."""
+    trials = []
+    for sid, sh in shelves.groupby("shelf", sort=True):
+        keys = sh.product_key.tolist()
+        pk = sh[sh.role == "pilgrim"].product_key.iloc[0]
+        card = cards[(cards.shelf == sid) & (cards.product_key == pk)].iloc[0]
+        qrow = questions[questions.qid == f"{sid}-b-en"].iloc[0]
+        claims = [x for x in str(card.claims).split(" | ") if x]
+        words = ", ".join(w.strip().capitalize() for w in str(qrow.concern).split(";"))
+        words = {"Natural shade": "Natural everyday shades"}.get(words, words).replace("No white layer", "No white cast")
+        variants = {
+            "plain": {"claims": "", "texture": ""},
+            "shopper_words": {"good_for": f"{words}; {str(card.good_for).split(';')[0]}"},
+            "derm_tested": {"claims": " | ".join(claims[:1] + ["Dermatologically tested"])},
+            "clinical": {"claims": " | ".join(claims[:1] + ["Clinically tested: visible results in 4 weeks"])},
+        }
+        for v, ov in variants.items():
+            for r in range(8):
+                trials.append({"trial_id": f"{sid}|pilgrim_card|{v}|{pk}|en|1|{len(trials)}", "shelf": sid,
+                               "condition": "pilgrim_card", "level": v, "target": pk, "target_brand": "Pilgrim",
+                               "target_role": "pilgrim", "language": "en", "repeat": 1, "question": qrow.question,
+                               "order": rotation(keys, r), "mods": {"card_override": {pk: ov}}})
+    return trials
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--set", choices=["full", "pilot"], default="full")
+    ap.add_argument("--set", choices=["full", "pilot", "card"], default="full")
     ap.add_argument("--shelves", nargs="*", help="limit to these shelf ids, e.g. N01 N07")
     args = ap.parse_args()
     shelves = pd.read_csv(ROOT / "data" / "part2" / "shelves.csv")
     if args.shelves:
         shelves = shelves[shelves.shelf.isin(args.shelves)]
     questions = pd.read_csv(ROOT / "data" / "part1" / "questions.csv")
-    trials = make(shelves, questions, args.set)
+    if args.set == "card":
+        trials = make_card_test(shelves, questions, pd.read_csv(ROOT / "data" / "part2" / "cards.csv").fillna(""))
+    else:
+        trials = make(shelves, questions, args.set)
     out = ROOT / "data" / "part2" / f"trials_{args.set}.jsonl"
     with open(out, "w", encoding="utf-8") as f:
         for t in trials:

@@ -69,9 +69,9 @@ GPT-6 Luna, GPT-6 Sol, Gemini 3.1 Flash-Lite, Gemini 3.6 Flash, Claude Haiku 5.5
 |---|---|---|
 | A. Build (free) | Shelf builder: 10 shelves, one per Part 1 need, 8 products from 8 brands. 1 Pilgrim, about 3 Part 1 favourites, 2 D2C peers, 1 legacy, 1 deliberately wrong fit. Standard cards. Trial generator, runner (reuses the Part 1 async runner and budget cap), scorer | $0 |
 | B. User review (free) | 10 shelves plus sample cards | $0 |
-| C. Pilot | 1–2 shelves × all 9 models × every trial type, small. Measures real cost per call, parse rate and sanity checks | $0.40 |
-| D. Main grid | 6 cheap models × 10 shelves × all trials (shuffle and repeats, rating ladder, badges, price, brand hidden or swapped, Hinglish). Sized after the pilot | $4.50 |
-| E. Premium check | Sol, Sonnet, Gemini 3.6 on a subset (baseline, key rating gaps, brand hidden) | $2.00 |
+| C. Pilot ✅ | 2 shelves × all 9 models: 768 answers, 100% parsed | $0.37 |
+| D. Main grid | 6 cheap models × 10 shelves × all 1,840 trials (shuffle and repeats, rating ladder, badges, price, brand hidden or swapped, Hinglish, no budget) | **$2.50** (was $4.50; the pilot showed it's cheaper) |
+| E. Premium check | Sol, Sonnet, Gemini 3.6 on a subset: base ×1, no_budget, brand_hidden, rating_ctrl, rating +0.4. 400 trials × 3 = 1,200 calls → `logs/part2/premium.jsonl` (started 2026-10-22) | **$3.50** (user OK'd the new split 2026-10-22) |
 | F. Pilgrim card test | Variants of Pilgrim's own card (strength % shown, clinical claim, plainer copy). What lifts Pilgrim's pick rate? | $1.00 |
 | Re-runs and fixes | | $1.00 |
 | **Never touched** | | **$1.90** |
